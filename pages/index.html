@@ -9,13 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Table Configurator</title>
+    <title>Build your Hi5 Union</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -43,7 +40,6 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
-               
                 <a class="navbar-brand" href="index.html">Hi5 Union</a>
             </div>
             <!-- /.navbar-header -->
@@ -51,17 +47,18 @@
 
         </nav>
 
-        <div id="page-wrapper">
+        <div id="page-wrapper2">
             <div class="row">
                 <div class="col-lg-12">
 
                         <style type="text/css">
+                            #page-wrapper2{ padding: 50px; }
                             .navbar { background: #313131; color:#fff; }
                             .navbar a { color:#fff; }
                             #prod { background: url('../dist/img/bg.png'); width:1919px; height:1080px; margin-top:25px; }
 
                             #prod-image-product_option1, #prod-image-product_option2, #prod-image-product_option3 { position: absolute; top:179px; left:14px; }
-                                #prod-image-product_option1 { position: absolute; top:178px; left:14px; }
+                                
                                 
                             .options { margin-top: 25px; }
                             .dropdown-toggle, 
@@ -74,10 +71,10 @@
                             .dropdown-menu>li { font-size: 17px; font-weight: 400; } 
                             .dropdown-menu>li>a img, 
                                 .dropdown-toggle img { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;width:50px; }
-                            .dropdown-menu>li>a:hover { background: #f1f9fd } /* $search-blue */
+                            .dropdown-menu>li>a:hover { background: #f1f9fd } 
+                            button .disabled { color: #ccc; }
+                            button .enabled { color: #333; }
                             .dropdown-header { background: #f6f6f6; font-size: 14px; font-weight: 300; padding-top: 10px; padding-bottom: 10px; margin-top: 10px; margin-bottom: 10px; }
-
-                        
 
                             .btn-default { border: 1px solid #ccc; }
                             .btn-default:hover { border: 1px solid #ddd; background: #f1f9fd; }
@@ -91,8 +88,8 @@
                         <div class="btn-group hardware">
                             <h3>Hardware</h3>
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_1">
-                              <img>
-                                <span class="text">1. Select Hardware</span>
+                              <img src="http://via.placeholder.com/50/cccccc/fffffff?text=1">
+                                <span class="text"> Select Hardware</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
                             
@@ -144,9 +141,9 @@
 
                         <div class="btn-group laminate">
                             <h3>Laminate</h3>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_2">
-                              <img>
-                                <span class="text">2. Select Tabletop</span>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_2">
+                              <img src="http://via.placeholder.com/50/cccccc/fffffff?text=2">
+                                <span class="text">Select Tabletop</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
                             
@@ -197,9 +194,9 @@
 
                         <div class="btn-group outlet">
                             <h3>Outlet</h3>
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_3">
-                              <img>
-                                <span class="text">3. Select Outlet</span>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_3">
+                              <img src="http://via.placeholder.com/50/cccccc/fffffff?text=3">
+                                <span class="text"> Select Outlet</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
                             
@@ -221,19 +218,19 @@
                             </ul>
                             </div>
 
-                            <div class="btn-group laminate">
+                            <div class="btn-group laminate hidden">
                                 <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="buy">
                                     MORE INFO
                                 </button>
 
-                        </div><!-- .options -->
-
-                        <div id="prod">
-                            <img id="prod-image-product_option1" style="z-index:1;"/>
-                            <img id="prod-image-product_option2" style="z-index:1;"/>
-                            <img id="prod-image-product_option3" style="z-index:1;"/>
-                        </div>
-
+                    </div><!-- .options -->
+                    
+                    <div id="prod">
+                        <img id="prod-image-product_option1" style="z-index:1;"/>
+                        <img id="prod-image-product_option2" style="z-index:1;"/>
+                        <img id="prod-image-product_option3" style="z-index:1;"/>
+                    </div>
+                
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -249,9 +246,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>

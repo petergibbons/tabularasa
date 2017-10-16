@@ -20,7 +20,7 @@ $(function() {
         height = height - topOffset;
         if (height < 1) height = 1;
         if (height > topOffset) {
-            $("#page-wrapper").css("min-height", (height) + "px");
+            $("#page-wrapper2").css("min-height", (height) + "px");
         }
     });
 
@@ -40,7 +40,6 @@ $(function() {
         }
     }
 
-    // Configurator
 
      // Configurator
 
@@ -78,12 +77,17 @@ $(function() {
         var layer = $(this).data("layer");
         var thumb = $(this).find('img').attr('src');
 
+        // enable button text for this option and next
+        //$('#selected_' + layer + ' span, #selected_' + (layer+1) + ' span').removeClass('disabled');
+        $('#selected_' + layer + ', #selected_' + (layer+1)).removeClass('disabled');
+
+        // change product image
         $('#prod-image-product_option'+layer).fadeOut(250, function() {
             $('#prod-image-product_option'+layer).attr('src', data[value].img).fadeIn(250);      
         });
 
+        // change button thumbnail and label
         $('#selected_' + layer +' img' ).attr('src', thumb);
-
         $('#selected_' + layer +' .text').text(data[value].label);
 
         e.preventDefault();
