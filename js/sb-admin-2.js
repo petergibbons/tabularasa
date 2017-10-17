@@ -44,42 +44,7 @@ $(function() {
         }
     }
 
-    // preload images manually for now
-        var imageList = [
-            "../dist/img/bg.png",
-            "../dist/img/Laminate_01.png",
-            "../dist/img/Laminate_02.png",
-            "../dist/img/Laminate_03.png",
-            "../dist/img/Laminate_04.png",
-            "../dist/img/Laminate_05.png",
-            "../dist/img/Laminate_06.png",
-            "../dist/img/Laminate_07.png",
-            "../dist/img/Laminate_08.png",
-            "../dist/img/Laminate_09.png",
-            "../dist/img/Laminate_00.png",
-            "../dist/img/Hardware-Color_09.png",
-            "../dist/img/Hardware-Color_08.png",
-            "../dist/img/Hardware-Color_07.png",
-            "../dist/img/Hardware-Color_06.png",
-            "../dist/img/Hardware-Color_05.png",
-            "../dist/img/Hardware-Color_04.png",
-            "../dist/img/Hardware-Color_03.png",
-            "../dist/img/Hardware-Color_02.png",
-            "../dist/img/Hardware-Color_01.png",
-            "../dist/img/Hardware-Color_00.png",
-            "../dist/img/ECAColor_01.png",
-            "../dist/img/ECAColor_02.png",
-            "../dist/img/ECAColor_03.png",
-        ];
-
-
-    for( var i = 0; i < imageList.length; i++ ) {
-        var imageObject = new Image();
-        imageObject.src = imageList[i];
-    }
-
-
-
+    
 
 
      // Configurator
