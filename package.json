@@ -22,5 +22,7 @@
     "type": "git",
     "url": "git://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery-prefetch": "^0.1.3"
+  }
 }
