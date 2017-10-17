@@ -51,6 +51,7 @@ $(function() {
 
     // preload images manually for now
         var imageList = [
+            "../dist/img/bg.png",
             "../dist/img/Laminate_01.png",
             "../dist/img/Laminate_02.png",
             "../dist/img/Laminate_03.png",
