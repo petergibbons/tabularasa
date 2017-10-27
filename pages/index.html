@@ -116,9 +116,19 @@
                             .btn-default { border: 1px solid #ccc; }
                             .btn-default:hover { border: 1px solid #ddd; background: #f1f9fd; }
 
-                            #buy { margin-top: 42px;  }
-
+                            #buy { 
+                                margin-top: 42px;
+                                width: 100px;
+                                -webkit-transition: all 3.5s; /* For Safari 3.1 to 6.0 */
+                                transition: all 3.5s;
+                                border: none;
+                            }
+                            #total_cost { 
+                                font-size: 25px;
+                                font-weight: 200;
+                            }
                         </style>
+
                     <div class="options">
 
                         <div class="btn-group hardware">
@@ -175,7 +185,6 @@
                             </ul>
                         </div>
                     
-
                         <div class="btn-group laminate">
                             <h3>Laminate</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_2">
@@ -253,22 +262,27 @@
                               </li>
                        
                             </ul>
-                            </div>
+                        </div>
 
-                            <div class="btn-group laminate hidden">
-                                <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="buy">
-                                    MORE INFO
-                                </button>
-                            </div>
+                        <div class="btn-group buy-wrapper">
+                            <button type="button" class="btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="buy">
+                                <span id="total_cost"></span>
+                            </button>
+                        </div>
 
                     </div><!-- .options -->
-                    
                     <div id="prod">
                         <img id="prod-image-product_option1" style="z-index:1;" src="../dist/img/Loading_Table_Hardware.png" />
                         <img id="prod-image-product_option2" style="z-index:1;" src="../dist/img/Loading_Table_Laminate.png"/>
                         <img id="prod-image-product_option3" style="z-index:1;"/>
-                    </div>
+                    </div><!-- #prod -->
                 
+                    <div id="order_details">
+                        <div><span id="option_1"></span><span id="cost_1"></span></div>
+                        <div><span id="option_2"></span><span id="cost_2"></span></div>
+                        <div><span id="option_3"></span><span id="cost_3"></span></div>
+                    </div><!-- #order_details -->
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
