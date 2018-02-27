@@ -9,7 +9,7 @@
      // Configurator
 
     var data = {
-        "1" : { img: "../dist/img/Laminate_01.png", thumb: "dist/img/thumbs/Laminate_01_dove-grey.jpg", label: "Dove Grey", item_type: "Laminate", model_code: "DB-38" },
+        "1" : { img: "dist/img/Laminate_01.png", thumb: "dist/img/thumbs/Laminate_01_dove-grey.jpg", label: "Dove Grey", item_type: "Laminate", model_code: "DB-38" },
         "2" : { img: "dist/img/Laminate_02.png", thumb: "dist/img/thumbs/Laminate_02_saddle-oak.jpg", label: "Saddle Oak", item_type: "Laminate", model_code: "SSB-38" },
         "3" : { img: "dist/img/Laminate_03.png", thumb: "dist/img/thumbs/Laminate_03_asian-night.jpg", label: "Asian Night", item_type: "Laminate", model_code: "BVY-NU" },
         "4" : { img: "dist/img/Laminate_04.png", thumb: "dist/img/thumbs/Laminate_04_beigewood.jpg", label: "Beigewood", item_type: "Laminate", model_code: "NK-JD" },
