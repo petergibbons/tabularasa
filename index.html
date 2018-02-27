@@ -1,13 +1,504 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta http-equiv="refresh" content="0;url=pages/index.html">
-<title>SB Admin 2</title>
-<script language="javascript">
-    window.location.href = "pages/index.html"
-</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Build your Hi5 Union 2.0</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- bootstrap-select -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        // preload images manually for now
+        // indeed
+        var imageList = [
+            "dist/img/bg.png",
+            "dist/img/Laminate_01.png",
+            "dist/img/Laminate_02.png",
+            "dist/img/Laminate_03.png",
+            "dist/img/Laminate_04.png",
+            "dist/img/Laminate_05.png",
+            "dist/img/Laminate_06.png",
+            "dist/img/Laminate_07.png",
+            "dist/img/Laminate_08.png",
+            "dist/img/Laminate_09.png",
+            "dist/img/Laminate_00.png",
+            "dist/img/Hardware-Color_09.png",
+            "dist/img/Hardware-Color_08.png",
+            "dist/img/Hardware-Color_07.png",
+            "dist/img/Hardware-Color_06.png",
+            "dist/img/Hardware-Color_05.png",
+            "dist/img/Hardware-Color_04.png",
+            "dist/img/Hardware-Color_03.png",
+            "dist/img/Hardware-Color_02.png",
+            "dist/img/Hardware-Color_01.png",
+            "dist/img/Hardware-Color_00.png",
+            "dist/img/ECAColor_01.png",
+            "dist/img/ECAColor_02.png",
+            "dist/img/ECAColor_03.png",
+        ];
+
+
+    for( var i = 0; i < imageList.length; i++ ) {
+        var imageObject = new Image();
+        imageObject.src = imageList[i];
+    }
+
+    </script>
 </head>
+
 <body>
-Go to <a href="pages/index.html">/pages/index.html</a>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Hi5 Union 2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-8">
+
+                        <style type="text/css">
+                            .navbar { background: #313131; color: #fff; }
+                            .navbar a { color: #fff; }
+                            #prod { /*background: url('dist/img/bg.png'); width: 1919px; height: 1080px;*/  } 
+
+                          /*  #prod-image-product_option1, #prod-image-product_option2, #prod-image-product_option3 { position: absolute; top: 179px; left: 14px; }
+                                #prod-image-product_option1 { position: absolute; top: 178px; left: 14px; }*/
+                            .product-option { position: absolute; top: 0; left: 0; }
+                                
+                            .options { margin-top: 25px; }
+                            .dropdown-toggle, 
+                            .dropdown-menu { width: 200px; }
+                            .btn-group { margin-right:5px; }
+                            .btn-group img { margin-right: 5px }
+                            .btn-group h3, #order_details h3 { font-size: 12px; text-transform: uppercase; color: #666; font-weight: 400; }
+                            .dropdown-toggle, button { padding-right: 50px; font-size: 16px; height: 85px; }
+                            .dropdown-toggle .glyphicon { margin-left: 5px; margin-right: -40px; color: #ccc; }
+                            .dropdown-menu { height: 200px; overflow:auto; }
+                            .dropdown-menu>li { font-size: 13px; font-weight: 400; } 
+                            .dropdown-menu>li>a img, 
+                                .dropdown-toggle img { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; width: 25px; }
+                            .dropdown-menu>li>a:hover { background: #f1f9fd } 
+                            .dropdown-header { background: #f6f6f6; font-size: 12px; font-weight: 300; padding-top: 10px; padding-bottom: 10px; margin-top: 10px; margin-bottom: 10px; }
+
+                            .btn-default { border: 1px solid #ccc; }
+                            .btn-default:hover { border: 1px solid #ddd; background: #f1f9fd; }
+
+                            .buy-wrapper { display: block; }
+                            #buy { margin-top: 42px; }
+
+                            .btn-quote { background-color: #7DBE4C !important; }
+
+                             .btn-group>.dropdown-toggle:not(:first-child) {
+                                    -moz-border-radius: 10px !important;
+                                    -webkit-border-radius: 10px !important;
+                                    border-radius: 10px !important;
+                                    -khtml-border-radius: 10px !important;
+                                }
+
+                        </style>
+
+                    <div id="prod">
+                        <img id="prod-image-product_option_bg" style="z-index:0;" class="img-responsive bg" src="dist/img/bg.png" />
+                        <img id="prod-image-product_option1" style="z-index:1;" class="img-responsive product-option" src="dist/img/Loading_Table_Laminate.png" />
+                        <img id="prod-image-product_option2" style="z-index:1;" class="img-responsive product-option" />
+                        <img id="prod-image-product_option3" style="z-index:1;" class="img-responsive product-option" />
+                        <img id="prod-image-product_option4" style="z-index:1;" class="img-responsive product-option" src="dist/img/Loading_Table_Hardware.png" />
+                        <img id="prod-image-product_option5" style="z-index:1;" class="img-responsive product-option" />
+                        <img id="prod-image-product_option6" style="z-index:1;" class="img-responsive product-option" />
+                    </div><!-- #prod -->
+                
+                </div>
+                <div class="col-lg-4 align-left" id="sidebar">
+
+                    <div id="order_details" style="display:none;">
+                        <div><a href="" id="edit-config"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Table Configuration</a></div>
+                        <h2>Contact Info:</h2>
+                        <p>Please complete the following form and a representative will contact you shortly</p>
+                            <div>
+                                <h3>Contact Name:</h3>
+                                <input type="text" name="Customer Name" placeholder="Contact Name" class="form-control" />
+                            </div>
+                            <div>
+                                <h3>Company Name:</h3>
+                                <input type="text" name="Company Name"  placeholder="Company Name" class="form-control" />
+                            </div>
+                            <div>
+                                <h3>City &amp; State:</h3>
+                                <input type="text" name="City & State"  placeholder="City & State" class="form-control" />
+                            </div>
+                            <div>
+                                <h3>Phone Number:</h3>
+                                <input type="text" name="Phone Number"  placeholder="Phone Number" class="form-control" />
+                            </div>
+                            <div>
+                                <h3>Email Address:</h3>
+                                <input type="text" name="Email Address" placeholder="Email Address" class="form-control" />
+                            </div>
+                            <div>
+                                <h3>Project Name:</h3>
+                                <input type="text" name="Project Name" placeholder="Project Name" class="form-control" />
+                            </div>
+                            <div>
+                                <h3>Budget Per Table:</h3>
+                                <input type="text" name="Budget Per Table" placeholder="Budget Per Table" class="form-control" />
+                            </div>
+
+                        <h3>Finishes:</h3>
+                            <div><span id="option_1"></span><span id="cost_1"></span></div>
+                            <div><span id="option_2"></span><span id="cost_2"></span></div>
+                            <div><span id="option_3"></span><span id="cost_3"></span></div>
+                            <div><span id="option_4"></span><span id="cost_4"></span></div>
+                            <div><span id="option_5"></span><span id="cost_5"></span></div>
+                            <div><span id="option_6"></span><span id="cost_6"></span></div>
+
+                        <h3>Model Code: <span id="model-code"></span></h3>
+
+                        <div id="table-quantity">
+                            Table Quantity
+                            <select name="Table Quantity">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9+">9+</option>
+                            </select>
+                        </div>
+                        
+                        <div id="table-dimensions">
+                            <h3>Table Dimensions</h3>
+                        
+                            Width: 
+                             <select name="Table Width">
+                                <script>
+                                    for ( i = 0; i < 115; i++) {
+                                        document.write('<option value="' + i + '">' + i +'"</option>');
+                                    }
+                                </script>
+                            </select>
+                            Length: 
+                             <select name="Table Length">
+                                <script>
+                                    for ( i = 0; i < 65; i++) {
+                                        document.write('<option value="' + i + '">' + i +'"</option>');
+                                    }
+                                </script>
+                            </select>
+                            Height: 
+                             <select name="Table Height">
+                                <script>
+                                    for ( i = 0; i < 55; i++) {
+                                        document.write('<option value="' + i + '">' + i +'"</option>');
+                                    }
+                                </script>
+                            </select>
+                        </div>
+
+                        <div id="power-boxes">
+                         <h3>Complete if Power Boxes are desired</h3>
+                            <div><input type="radio" name="Power Box" value="Cove" /> Cove</div>
+                            <div><input type="radio" name="Power Box" value="Villa" /> Villa</div>
+                            <div><input type="radio" name="Power Box" value="Seclusion" /> Seclusion</div>
+                            <div><input type="radio" name="Power Box" value="Interact G2" /> Interact G2</div>
+                            <div><input type="radio" name="Power Box" value="Interface IITT" /> Interface IITT</div>
+                            <div><input type="radio" name="Power Box" value="Reef" /> Reef</div>
+                            <div><input type="radio" name="Power Box" value="Mini-Outlets" /> Mini-Outlets</div>
+                        </div>
+
+                        <div>
+                            How many power boxes would you like? 
+                            <select name="Number of Outlets">
+                                <script>
+                                    for ( i = 0; i < 4; i++) {
+                                        document.write('<option value="' + i + '">' + i +'</option>');
+                                    }
+                                </script>
+                            </select>
+                        </div>
+
+                        <button id="submit-quote" class="btn btn-success btn-lg">Submit Quote Request</button>
+
+                    </div><!-- #order_details -->
+
+                     <div class="options">
+                    
+                        <div class="btn-group laminate">
+                            <h3>Tabletop Laminate</h3>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_1">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=1">
+                                <span class="text">Tabletop Color</span>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            
+                            <ul class="dropdown-menu option-dropdown option-dropdown">
+                                <li class="dropdown-header">Tabletop Options</li>
+                                <li>
+                                    <a href="#" title="" data-uid="1" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_01_dove-grey.png"> Dove Grey</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="2" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_02_saddle-oak.png"> Saddle Oak</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="3" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_03_asian-night.png"> Asian Night</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="4" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_04_beigewood.png"> Beigewood</a>
+                                </li> 
+                                <li>
+                                    <a href="#" title="" data-uid="5" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_05_zebrawood.png"> Zebrawood</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="6" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_06_vapor-strandz.png"> Vapor Strandz</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="7" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_07_grey_butcher.png"> Grey Butcher</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="8" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_08_amber-strandz.png"> Amber Strandz</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="9" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_09_skyline_walnut.png"> Skyline</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="10" data-layer="1">
+                                    <img src="dist/img/thumbs/Laminate_00_xanadu.png"> Xanadu</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="btn-group laminate-edge">
+                            <h3>Edge Laminate</h3>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_2">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=2">
+                                <span class="text">Edge Color</span>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            
+                            <ul class="dropdown-menu option-dropdown">
+                                <li class="dropdown-header">Edge Options</li>
+                                <li>
+                                    <a href="#" title="" data-uid="1" data-layer="2">
+                                    <img src="dist/img/thumbs/Laminate_01_dove-grey.png"> Edge Example</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="2" data-layer="2">
+                                    <img src="dist/img/thumbs/Laminate_02_saddle-oak.png"> Edge Example</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="3" data-layer="2">
+                                    <img src="dist/img/thumbs/Laminate_03_asian-night.png"> Edge Example</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="btn-group laminate-accent dropup">
+                            <h3>Accent Laminate</h3>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_3">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=3">
+                                <span class="text">Accent Color</span>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            
+                            <ul class="dropdown-menu option-dropdown">
+                                <li class="dropdown-header">Accent Options</li>
+                                <li>
+                                    <a href="#" title="" data-uid="7" data-layer="3">
+                                    <img src="dist/img/thumbs/Laminate_01_dove-grey.png"> Example</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="6" data-layer="3">
+                                    <img src="dist/img/thumbs/Laminate_02_saddle-oak.png"> Example</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="" data-uid="8" data-layer="3">
+                                    <img src="dist/img/thumbs/Laminate_03_asian-night.png"> Example</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="btn-group hardware dropup">
+                            <h3>Bracket Color</h3>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_4">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=4">
+                                <span class="text">Bracket Color</span>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            
+                            <ul class="dropdown-menu option-dropdown">
+                              <li class="dropdown-header">Hardware Options</li>
+                              <li>
+                                <a href="#" title="" data-uid="11" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware09_oh-so-blue.jpg"> Oh So Blue</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="12" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware08_indian_turquoise.jpg"> Indian Turquoise</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="13" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware07_destroyer-blue.jpg"> Destroyer Blue</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="14" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware06_flag-red.jpg"> Flag Red</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="15" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware04_graphite-metallic.jpg"> Graphite Metallic</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="16" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware04_sassy-pink.jpg"> Sassy Pink</a>
+                              </li>
+                                <li>
+                                <a href="#" title="" data-uid="17" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware03_designer-white.jpg"> Designer White</a>
+                              </li>
+                                 <li>
+                                <a href="#" title="" data-uid="18" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware02_black.jpg"> Black</a>
+                              </li>
+                                 <li>
+                                <a href="#" title="" data-uid="19" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware01_dazzling-pink.jpg"> Dazzling Pink</a>
+                              </li>
+                                <li>
+                                <a href="#" title="" data-uid="20" data-layer="4">
+                                    <img src="dist/img/thumbs/hardware00_sunshine-yellow.jpg"> Sunshine Yellow</a>
+                              </li>
+                              
+                            </ul>
+                        </div>
+
+                        <div class="btn-group outlet-type dropup">
+                            <h3>Power Placement</h3>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_5">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=5">
+                                <span class="text">Power Placement</span>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            
+                            <ul class="dropdown-menu option-dropdown">
+                              <li class="dropdown-header">Tabletop Outlet</li>
+                              <li>
+                                <a href="#" title="" data-uid="23" data-layer="5">
+                                    <img src="dist/img/beta-power-options.png"> </a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="24" data-layer="5">
+                                    <img src="dist/img/beta-power-options.png"> </a>
+                              </li>
+
+                              <li class="dropdown-header">Side Panel Outlet</li>
+                              <li>
+                                <a href="#" title="" data-uid="25" data-layer="5">
+                                    <img src="dist/img/beta-power-options.png"> </a>
+                              </li>
+                              
+                       
+                            </ul>
+                        </div>
+
+                        <div class="btn-group outlet dropup">
+                            <h3>Power Color</h3>
+                            <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_6">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=6">
+                                <span class="text"> Power Color</span>
+                              <span class="glyphicon glyphicon-chevron-down"></span>
+                            </button>
+                            
+                            <ul class="dropdown-menu option-dropdown">
+                              <li class="dropdown-header">Color Options</li>
+                              <li>
+                                <a href="#" title="" data-uid="21" data-layer="6">
+                                    <img src="dist/img/thumbs/ECAColor_01_silver.jpg"> Silver</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="22" data-layer="6">
+                                    <img src="dist/img/thumbs/ECAColor_02_black.jpg"> Black</a>
+                              </li>
+                              <li>
+                                <a href="#" title="" data-uid="23" data-layer="6">
+                                    <img src="dist/img/thumbs/ECAColor_03_white.jpg"> White</a>
+                              </li>
+                       
+                            </ul>
+                        </div>
+
+                        <div class="btn-group buy-wrapper">
+                            <button type="button" class="btn btn-quote btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="buy">
+                                <span id="quote_text">GET A QUOTE &gt;</span>
+                            </button>
+                        </div>
+
+                    </div><!-- .options -->
+                </div><!-- /.col-lg-3 -->
+            </div>
+
+            <div id="debug"></div>
+            
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- JS Snapshot -->
+    <script src="dist/js/html2canvas.min.js"></script>
+
+    <!-- Custom App JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+
 </body>
+
 </html>
