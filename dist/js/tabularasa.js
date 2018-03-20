@@ -42,7 +42,6 @@
 
 
 $(function() {
-  
     $('.option-dropdown a').click(function(e) {
         
         var value = $(this).data("uid");
@@ -51,9 +50,11 @@ $(function() {
         var layer = $(this).data("layer");
         var thumb = $(this).find('img').attr('src');
 
-        
         // enable button text for the next option
-        $('#selected_' + layer + ', #selected_' + (layer+1)).removeClass('disabled');
+        // @@@ unsure we need this...  May just confound user
+        //      
+        // possibly user for requiring user to have selected a tabletop and hardware before adding an outlet type
+        // $('#selected_' + layer + ', #selected_' + (layer+1)).removeClass('disabled');
 
         // change product image
         $('#prod-image-product_option'+layer).fadeOut(150, function() {
@@ -73,55 +74,136 @@ $(function() {
         e.preventDefault();
     });
 
+    // 'get a quote' button
     $('#buy').click(function(e) {
-
         // alert('It puts the quote in the bucket');
-        $('.options').fadeOut();
-            
-        $('#order_details').fadeIn();
-            
-        $(".options :button").attr("disabled", true);
-
-        $("#prod-image-product_option_bg").fadeTo("slow", .443);        
-
-        // Save image to new div???
-        //     html2canvas($("#prod"), {
-        //     onrendered: function(canvas) {
-        //         theCanvas = canvas;
-
-        //         canvas.toBlob(function(blob) {
-        //             saveAs(blob, "Dashboard.png"); 
-        //         });
-        //     }
-        
-       // });
-
+        $('.options').fadeOut('fast', function() {
+            // Animation complete.
+            $('#order-details').fadeIn();
+            $(".options :button").attr("disabled", true);
+            $("#prod-image-product_option_bg").fadeTo("slow", .443);
+        });
         e.preventDefault();
-
     });
 
-
+    // allow user to go back and edit table config
     $('#edit-config').click(function(e) {
-        $('.options').fadeIn();
-        $(".options :button").attr("disabled", false); 
-        $('#order_details').fadeOut();  
-        $("#prod-image-product_option_bg").fadeTo("slow", 1);
+        $('#order-details').fadeOut('fast', function() {
+            $('.options').fadeIn();
+            $(".options :button").attr("disabled", false); 
+            $("#prod-image-product_option_bg").fadeTo("slow", 1);
+        }); 
         e.preventDefault();
     });
 
+ /* // moved to callback of select-box  
     $('#submit-quote').click(function(e) {
         alert('submit quote');
         // send email to client - all order information
         // send email to end user - info received x hours to contact
         // BAM!!!!
 
-        $('#order_details').html("<h3>Thank for your submission.  All quotes are emailed within 24-48 hours.  To contact customer service, please call 816-774-4050. <a href='index.html'>Configure another table</a></h3>");
+        $('#order-details').fadeOut(); 
+        $('#order-details-thanks').fadeIn();
+        e.preventDefault();
+
+    });
+*/
+    
+    // render a pdf for download
+    $('#download-spec').click(function(e) {
+        //alert('PDF');
+        // copy all pertintent data to pdf div
+        $( ".prod-wrapper" ).clone().appendTo( "#order-details-pdf" );
+        $( "#order-details" ).clone().appendTo( "#order-details-pdf" );
+
+        var doc = new jsPDF();
+        var specialElementHandlers = {
+            '#editor': function (element, renderer) {
+                return true;
+            }
+        };
+        doc.fromHTML($('#order-details-pdf').html(), 15, 15, {
+            'width': 170,
+            'elementHandlers': specialElementHandlers
+        });
+        doc.save('Hi5_Spec_Sheet.pdf');
+        e.preventDefault();
+    });
+
+    // show power box options    
+    $("#outlet-count").change(function () {
+        if ($(this).val() >= 1) {
+            $("#power-boxes").show();
+        } else {
+            $("#power-boxes").hide();
+        }
     });
 
 
 
+    // Quote form validation
+        $("#quote").validate({
+            // Specify validation rules
+            rules: {
+              // The key name on the left side is the name attribute
+              // of an input field. Validation rules are defined
+              // on the right side
+              Name: "required",
+              City_State: "required",
+              Phone: "required",
+              Email: {
+                required: true,
+                // Specify that email should be validated
+                // by the built-in "email" rule
+                email: true
+              },
+              Budget: "required"
+              
+            },
+            // Make sure the form is submitted to the destination defined
+            // in the "action" attribute of the form when valid
+            submitHandler: function(form) {
+              //form.submit();
+                alert('submit quote');
+                // send email to client - all order information
+                // send email to end user - info received x hours to contact
+                // BAM!!!!
 
-    // traverse $data and output
+                $('#order-details').fadeOut(); 
+                $('#order-details-thanks').fadeIn();
+            }
+        });
+
+
+        // callbacks for boostrap select (power options)
+            $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
+                // do something...
+                //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
+                printObject(event)
+            });
+
+
+
+            function printObject(o) {
+              var out = '';
+              for (var p in o) {
+                out += '\n' + ':: ' + p + '(' + typeof(o[p]) + ') ::' + '\n' + o[p] + '\n';
+              }
+              console.log(out);
+            }
+
+
+
+// dev mode
+        $(':button').removeClass('disabled');
+
+
+
+
+    // traverse $data and output .options
+    // aim to list out all option dropdowns
+    // without having to hardcode all options
 
     var result = "";
 
@@ -139,13 +221,7 @@ $(function() {
     Object.entries(data).forEach(
         ([key, value]) => buildProductDropdowns(key,value)
     );
-
-
+ 
    
 });
-
-
-
-
-
 
