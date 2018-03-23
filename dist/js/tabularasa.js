@@ -6,7 +6,6 @@
 // preload all images
 //$("#page-wrapper2").Prefetch();
 
-     // Configurator
 
     var data = {
         "1" : { img: "dist/img/Laminate_01.png", thumb: "dist/img/thumbs/Laminate_01_dove-grey.jpg", label: "Dove Grey", item_type: "Laminate", model_code: "DB-38" },
@@ -42,6 +41,14 @@
 
 
 $(function() {
+
+    // table model chooser
+    $(".table-chooser-menu li a").click(function(){
+        $("#table-chooser").text($(this).text());
+        $("#table-chooser").val($(this).text());
+    });
+
+
     $('.option-dropdown a').click(function(e) {
         
         var value = $(this).data("uid");
@@ -69,7 +76,8 @@ $(function() {
         $("#option_" + layer).html( item_type + ": " + data[value].label);
 
         // update model info
-        $("#model-code").append( "[" + data[value].model_code + "]");
+        $(".model-code-" + layer).html( "[" + data[value].model_code + "]");
+        $("#model-code").fadeIn();
 
         e.preventDefault();
     });
@@ -185,20 +193,18 @@ $(function() {
 
 
 
-            function printObject(o) {
-              var out = '';
-              for (var p in o) {
-                out += '\n' + ':: ' + p + '(' + typeof(o[p]) + ') ::' + '\n' + o[p] + '\n';
-              }
-              console.log(out);
-            }
 
-
-
-// dev mode
+        // dev mode
         $(':button').removeClass('disabled');
 
-
+        function printObject(o) {
+            var out = '';
+            for (var p in o) {
+                out += '\n' + ':: ' + p + '(' + typeof(o[p]) + ') ::' + '\n' + o[p] + '\n';
+            }
+            console.log(out);
+        }
+    
 
 
     // traverse $data and output .options

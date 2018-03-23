@@ -82,23 +82,26 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="dropdown">
+        
+            
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="dropdown table-chooser-wrapper" style="display:none">
 
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					Tables
-					<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<li><a href="#">Union 2.0</a></li>
-					<li><a href="#">The Poindexter</a></li>
-					<li><a href="#">Kaiser Soze</a></li>
-				</ul>
-            </div><!-- /.dropdown -->
-        </nav>
+                    <button class="btn btn-default dropdown-toggle" type="button" id="table-chooser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    					Tables
+    					<span class="caret"></span>
+    				</button>
+    				<ul class="dropdown-menu table-chooser-menu" aria-labelledby="table-chooser">
+    					<li><a href="#">Union 2.0</a></li>
+    					<li><a href="#">Supreme</a></li>
+    					<li><a href="#">Harbor</a></li>
+    				</ul>
+                </div><!-- /.dropdown -->
+            </nav>
+
     		<style type="text/css">
 
-                .navbar { background: #313131; color: #fff; }
+                .navbar { background: #504D4E; color: #fff; }
                 .navbar a { color: #fff; }
 
     			/* no-gutters Class Rules */
@@ -116,22 +119,36 @@
 
                 .product-option { position: absolute; top: 0; left: 0; }
                 .options h3, .options #buy { margin-left: 15px; }
-                    
+                
+
+
                 .dropdown-toggle,
-                .dropdown-menu { width: 100% !important; min-width: 200px !important; }
+                .dropdown-menu { width: 100% !important; min-width: 200px !important;text-transform: uppercase; }
                 .btn-group img { margin-right: 5px; }
                 .btn-group h3, #order-details h3 { font-size: 12px; text-transform: uppercase; color: #666; font-weight: 400; }
                 
-                .dropdown-toggle, button { padding-right: 50px; font-size: 16px; height: 55px; }
+                .dropdown-toggle, button { padding-right: 50px; font-size: 14px; height: 55px; }
                 .dropdown-toggle .glyphicon { margin-left: 5px; margin-right: -40px; color: #ccc; }
                 
                 .dropdown-menu { height: 200px; overflow:auto; }
-                .dropdown-menu>li { font-size: 13px; font-weight: 400; } 
-                .dropdown-menu>li>a img, 
-                    .dropdown-toggle img { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; width: 25px; }
-                .dropdown-menu>li>a:hover { background: #f1f9fd } 
+                    .dropdown-menu>li { font-size: 13px; font-weight: 400; } 
+                    .dropdown-menu>li>a img, 
+                        .dropdown-toggle img { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; width: 25px; }
+
+                       .dropdown-menu>li>a{
+                         -webkit-transition: color .2s linear;
+                          -moz-transition: color .2s linear;
+                          -ms-transition: color .2s linear;
+                          -o-transition: color .2s linear;
+                          transition: color .2s linear;
+                      }
+                    .dropdown-menu>li>a:hover { background: #f6f6f6; color: #7DBE4C; } 
                 
-                .dropdown-header { background: #f6f6f6; font-size: 12px; font-weight: 300; padding-top: 10px; padding-bottom: 10px; margin-top: 10px; margin-bottom: 10px; }
+                .dropdown-header { background: #f6f6f6; font-size: 12px; font-weight: 400; padding-top: 10px; padding-bottom: 10px; margin-top: 10px; margin-bottom: 10px; }
+
+                 #table-chooser { width: 300px !important; }
+                .table-chooser-menu { width: 300px !important; }
+                .table-chooser-menu>li>a {font-size: 14px;}
 
                 .btn-default { border: 1px solid #ccc; }
                 .btn-default:hover { border: 1px solid #ddd; background: #f1f9fd; }
@@ -144,11 +161,11 @@
 
                 #edit-config { margin-top: 10px; background: none; color: #333; border: none; }
 
-                .btn-group>.dropdown-toggle {
-    				-moz-border-radius: 10px !important; -webkit-border-radius: 10px !important; border-radius: 10px !important; -khtml-border-radius: 10px !important;
-    			}
+                .btn-group>.dropdown-toggle { -moz-border-radius: 10px !important; -webkit-border-radius: 10px !important; border-radius: 10px !important; -khtml-border-radius: 10px !important; }
 
                 label.error { color: #cc0000; font-weight: 400; }
+
+                #model-code { font-style: italic; margin-top: 10px; color: #666; }
 
             </style>
 
@@ -166,6 +183,16 @@
                         <img id="prod-image-product_option5" style="z-index:1;" class="img-responsive product-option" />
                         <img id="prod-image-product_option6" style="z-index:1;" class="img-responsive product-option" />
                     </div><!-- #prod -->
+
+                    <div id="model-code" style="display: none;">
+                        <strong>Model Code: </strong>
+                        <span class="model-code-1"></span>
+                        <span class="model-code-2"></span>
+                        <span class="model-code-3"></span>
+                        <span class="model-code-4"></span>
+                        <span class="model-code-5"></span>
+                        <span class="model-code-6"></span>
+                    </div>
                 
                 </div>
                 <div class="col-lg-4 align-left no-gutters" id="sidebar">
@@ -221,8 +248,6 @@
                             <div><span id="option_5"></span><span id="cost_5"></span></div>
                             <div><span id="option_6"></span><span id="cost_6"></span></div>
 
-                        <h3>Model Code: <span id="model-code"></span></h3>
-
                         <div id="table-quantity">
                             Table Quantity
                             <select name="Table Quantity">
@@ -246,7 +271,6 @@
                                 <script>
                                     for ( i = 0; i < 165; i++) {
                                         $("#table-width").append('<option value="' + i + '">' + i +'"</option>');
-
                                     }
                                 </script>
                             </select>
@@ -307,7 +331,7 @@
 					<div id="editor"></div>
 
                     <div class="options row">
-                		<h3>Table Options</h3>
+                		<h3>Union 2.0 Options</h3>
                         <div class="btn-group laminate col-xs-12 col-sm-4 col-md-4 col-lg-6">
                             <h3>Tabletop Laminate</h3>
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_1">
@@ -468,7 +492,7 @@
                         </div>
 
                         <div class="btn-group top-outlet-type col-xs-12 col-sm-4 col-md-4 col-lg-6">
-                            <h3>Top Power</h3>
+                            <h3>Table Top Power</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_5">
                               <img src="http://via.placeholder.com/25/cccccc/fffffff?text=5">
                                 <span class="text">Power Options</span>
@@ -497,7 +521,7 @@
                         </div>
 
                         <div class="btn-group side-outlet-type col-xs-12 col-sm-4 col-md-4 col-lg-6 selectpicker">
-                            <h3>Side Power</h3>
+                            <h3>Table Base Power</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_6">
                               <img src="http://via.placeholder.com/25/cccccc/fffffff?text=6">
                                 <span class="text">Power Options</span>
