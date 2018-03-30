@@ -17,8 +17,10 @@
      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">-->
      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 
+
     <!-- Custom CSS -->
     <link href="dist/css/tabularasa.css" rel="stylesheet">
+
 
     <!-- Bootstrap-select 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/css/bootstrap-select.min.css">-->
@@ -28,8 +30,7 @@
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -104,16 +105,10 @@
                 .navbar { background: #504D4E; color: #fff; }
                 .navbar a { color: #fff; }
 
-    			/* no-gutters Class Rules */
-    			.no-gutters {
-    			   margin-right: 0;
-    			   margin-left: 0;
-    			}
+    			/* no-gutters */
+    			.no-gutters { margin-right: 0; margin-left: 0; }
     			.no-gutters > [class^="col-"],
-    			.no-gutters > [class*=" col-"] {
-    			   padding-right: 0;
-    			   padding-left: 0;
-    			}
+    			.no-gutters > [class*=" col-"] { padding-right: 0; padding-left: 0; }
 
     			.prod-wrapper { max-width: 960px; }
 
@@ -121,14 +116,19 @@
                 .options h3, .options #buy { margin-left: 15px; }
                 
 
-
                 .dropdown-toggle,
-                .dropdown-menu { width: 100% !important; min-width: 200px !important;text-transform: uppercase; }
+                .dropdown-menu,
+                div.bootstrap-select { width: 100% !important; min-width: 200px !important; text-transform: uppercase; }
+
+                div.bootstrap-select button { color: #333; }
+
+                .bootstrap-select.btn-group .dropdown-toggle .filter-option { text-align: center !important; }
+
                 .btn-group img { margin-right: 5px; }
                 .btn-group h3, #order-details h3 { font-size: 12px; text-transform: uppercase; color: #666; font-weight: 400; }
                 
                 .dropdown-toggle, button { padding-right: 50px; font-size: 14px; height: 55px; }
-                .dropdown-toggle .glyphicon { margin-left: 5px; margin-right: -40px; color: #ccc; }
+                .dropdown-toggle .glyphicon,div.bootstrap-select { margin-left: 5px; margin-right: -40px; color: #ccc; }
                 
                 .dropdown-menu { height: 200px; overflow:auto; }
                     .dropdown-menu>li { font-size: 13px; font-weight: 400; } 
@@ -144,10 +144,12 @@
                       }
                     .dropdown-menu>li>a:hover { background: #f6f6f6; color: #7DBE4C; } 
                 
+                .power-options .dropdown-menu>li>a img, .power-options-base .dropdown-menu>li>a img { width: auto !important; }
+                .power-options .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark { margin-top: 18px !important; }
+
                 .dropdown-header { background: #f6f6f6; font-size: 12px; font-weight: 400; padding-top: 10px; padding-bottom: 10px; margin-top: 10px; margin-bottom: 10px; }
 
-                 #table-chooser { width: 300px !important; }
-                .table-chooser-menu { width: 300px !important; }
+                 #table-chooser, .table-chooser-menu { width: 300px !important; }
                 .table-chooser-menu>li>a {font-size: 14px;}
 
                 .btn-default { border: 1px solid #ccc; }
@@ -235,85 +237,73 @@
                             </div>
                         </div>
                         <div class="row">
-							<div class="col-lg-6">
+                            <div class="col-lg-6">
                                 <h3>Budget Per Table:</h3>
                                 <input type="text" name="Budget" placeholder="Budget Per Table" class="form-control" />
                             </div>
-                        </div>
-                        <h3>Finishes:</h3>
-                            <div><span id="option_1"></span><span id="cost_1"></span></div>
-                            <div><span id="option_2"></span><span id="cost_2"></span></div>
-                            <div><span id="option_3"></span><span id="cost_3"></span></div>
-                            <div><span id="option_4"></span><span id="cost_4"></span></div>
-                            <div><span id="option_5"></span><span id="cost_5"></span></div>
-                            <div><span id="option_6"></span><span id="cost_6"></span></div>
+                            <div class="col-lg-6" id="table-dimensions">
+                                <h3>Table Dimensions</h3>
+                                    <div>Table Width: <select name="Table_Width" id="table-width"></select></div>
+                                    <div>Table Length: <select name="Table_Length" id="table-length"></select></div>
+                                    <div>Table Height: <select name="Table_Height" id="table-height"></select></div>
+                            </div>
+                            </div>
+                         <div class="row">
+                            <div id="finishes-chosen" class="col-lg-6">
+                                <h3>Finishes:</h3>
+                                    <div><span id="option_1"></span><span id="cost_1"></span></div>
+                                    <div><span id="option_2"></span><span id="cost_2"></span></div>
+                                    <div><span id="option_3"></span><span id="cost_3"></span></div>
+                                    <div><span id="option_4"></span><span id="cost_4"></span></div>
+                                    <div><span id="option_5"></span><span id="cost_5"></span></div>
+                                    <div><span id="option_6"></span><span id="cost_6"></span></div>
+                            </div>
 
-                        <div id="table-quantity">
-                            Table Quantity
-                            <select name="Table Quantity">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9+">9+</option>
-                            </select>
+                            <div id="table-quantity" class="col-lg-6">
+                                Table Quantity:
+                                <select name="Table Quantity">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9+">9+</option>
+                                </select>
+
+                                <div>
+                                    <h3>Notes</h3>
+                                    <textarea class="form-control" name="Notes"></textarea>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="row">
+                            <div class="col-lg-6">
                         
-                        <div id="table-dimensions">
-                            <h3>Table Dimensions</h3>
-                        
-                            Width: 
-                             <select name="Table Width" id="table-width">
-                                <script>
-                                    for ( i = 0; i < 165; i++) {
-                                        $("#table-width").append('<option value="' + i + '">' + i +'"</option>');
-                                    }
-                                </script>
-                            </select>
-                            Length: 
-                             <select name="Table Length" id="table-length">
-                                <script>
-                                    for ( i = 0; i < 165; i++) {
-                                        $("#table-length").append('<option value="' + i + '">' + i +'"</option>');
-                                    }
-                                </script>
-                            </select>
-                            Height: 
-                             <select name="Table Height" id="table-height">
-                                <script>
-                                    for ( i = 0; i < 55; i++) {
-                                        $("#table-height").append('<option value="' + i + '">' + i +'"</option>');
-                                    }
-                                </script>
-                            </select>
-                        </div>
-                        <div>
-                            How many power boxes would you like? 
-                            <select name="Number of Outlets" id="outlet-count">
-                                <script>
-                                    for ( i = 0; i < 4; i++) {
-                                        $("#outlet-count").append('<option value="' + i + '">' + i +'</option>');
-                                    }
-                                </script>
-                            </select>
+                                <h3>Number of Power Boxes</h3> 
+                                <span id="outletCount"></span>
+                                <select name="Number of Outlets" id="outlet-count"></select>
 
+                                <div id="power-boxes" style="display:none;">
+                                    <h3>Power Box Style</h3>
+                                    <div><input type="radio" name="Power Box" value="Cove" /> Cove</div>
+                                    <div><input type="radio" name="Power Box" value="Villa" /> Villa</div>
+                                    <div><input type="radio" name="Power Box" value="Seclusion" /> Seclusion</div>
+                                    <div><input type="radio" name="Power Box" value="Interact G2" /> Interact G2</div>
+                                    <div><input type="radio" name="Power Box" value="Interface IITT" /> Interface IITT</div>
+                                    <div><input type="radio" name="Power Box" value="Reef" /> Reef</div>
+                                    <div><input type="radio" name="Power Box" value="Mini-Outlets" /> Mini-Outlets</div>
+                                    <div><input type="radio" name="Power Box" value="None" /> None</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                
+                            </div>
                         </div>
-                        <div id="power-boxes" style="display:none;">
-                         <h3>Power Box Style</h3>
-                            <div><input type="radio" name="Power Box" value="Cove" /> Cove</div>
-                            <div><input type="radio" name="Power Box" value="Villa" /> Villa</div>
-                            <div><input type="radio" name="Power Box" value="Seclusion" /> Seclusion</div>
-                            <div><input type="radio" name="Power Box" value="Interact G2" /> Interact G2</div>
-                            <div><input type="radio" name="Power Box" value="Interface IITT" /> Interface IITT</div>
-                            <div><input type="radio" name="Power Box" value="Reef" /> Reef</div>
-                            <div><input type="radio" name="Power Box" value="Mini-Outlets" /> Mini-Outlets</div>
-                            <div><input type="radio" name="Power Box" value="None" /> None</div>
-                        </div>
-
+                            
                         <div id="submit-quote-wrapper">
                             <button id="submit-quote" class="btn btn-success btn-lg">Submit Quote Request</button>
                         </div>
@@ -335,7 +325,7 @@
                         <div class="btn-group laminate col-xs-12 col-sm-4 col-md-4 col-lg-6">
                             <h3>Tabletop Laminate</h3>
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_1">
-                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=1">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=?">
                                 <span class="text">Tabletop Color</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
@@ -388,7 +378,7 @@
                         <div class="btn-group laminate-edge col-xs-12 col-sm-4 col-md-4 col-lg-6">
                             <h3>Edge Laminate</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_2">
-                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=2">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=?">
                                 <span class="text">Edge Color</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
@@ -414,7 +404,7 @@
                         <div class="btn-group laminate-accent col-xs-12 col-sm-4 col-md-4 col-lg-6">
                             <h3>Accent Laminate</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_3">
-                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=3">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=?">
                                 <span class="text">Accent Color</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
@@ -440,7 +430,7 @@
                         <div class="btn-group hardware col-xs-12 col-sm-4 col-md-4 col-lg-6">
                             <h3>Bracket Color</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_4">
-                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=4">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=?">
                                 <span class="text">Bracket Color</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
@@ -491,16 +481,16 @@
                             </ul>
                         </div>
 
-                        <div class="btn-group top-outlet-type col-xs-12 col-sm-4 col-md-4 col-lg-6">
+                        <div class="btn-group top-outlet-type col-xs-12 col-sm-4 col-md-4 col-lg-6" style="display:none;"">
                             <h3>Table Top Power</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_5">
-                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=5">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=?">
                                 <span class="text">Power Options</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
                             
                             <ul class="dropdown-menu option-dropdown">
-                              <li class="dropdown-header">Tabletop Outlet</li>
+                              <li class="dropdown-header">Table Top Outlet</li>
                               <li>
                                 <a href="#" title="" data-uid="23" data-layer="5">
                                     <img src="dist/img/beta-power-options.png"> </a>
@@ -520,16 +510,16 @@
                             </ul>
                         </div>
 
-                        <div class="btn-group side-outlet-type col-xs-12 col-sm-4 col-md-4 col-lg-6 selectpicker">
+                        <div class="btn-group side-outlet-type col-xs-12 col-sm-4 col-md-4 col-lg-6" style="display:none;">
                             <h3>Table Base Power</h3>
                             <button type="button" class="btn btn-default dropdown-toggle disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_6">
-                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=6">
+                              <img src="http://via.placeholder.com/25/cccccc/fffffff?text=?">
                                 <span class="text">Power Options</span>
                               <span class="glyphicon glyphicon-chevron-down"></span>
                             </button>
                             
                             <ul class="dropdown-menu option-dropdown">
-                              <li class="dropdown-header">Tabletop Outlet</li>
+                              <li class="dropdown-header">Table Base Outlet</li>
                               <li>
                                 <a href="#" title="" data-uid="23" data-layer="6">
                                     <img src="dist/img/beta-power-options.png"> </a>
@@ -549,12 +539,21 @@
                             </ul>
                         </div>
 
-                        <div class="power-options btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down" style="display:none">
-                            <h3>Top Power</h3>
-                            <select class="selectpicker" id="top-outlet-type" multiple title="Top Outlets">
-                                <option data-content="<img src='dist/img/thumbs/hardware06_flag-red.jpg'>" title="Mustard">Mustard</option>
-                                <option>Ketchup</option>
-                                <option>Relish</option>
+                        <div class="power-options btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down">
+                            <h3>Table Top Power</h3>
+                            <select class="selectpicker" id="top-outlet-type" multiple title="Table Top Outlets" data-width="auto" data-size="3">
+                                <option data-content="<img src='dist/img/thumbs/outlet_left.png'>" title="Left">Left</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_middle.png'>" title="Middle">Middle</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_right.png'>" title="Right">Right</option>
+                            </select>
+                        </div>
+
+                        <div class="power-options-base btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down">
+                            <h3>Base Power</h3>
+                            <select class="selectpicker" id="base-outlet-type" multiple title="Base Power Outlets">
+                                <option data-content="<img src='dist/img/thumbs/outlet_left.png'>" title="Left">Left</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_middle.png'>" title="Middle">Middle</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_right.png'>" title="Right">Right</option>
                             </select>
                         </div>
 
@@ -574,15 +573,18 @@
 
     </div><!-- /#wrapper -->
 
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+
 	<!-- jquery validate -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/additional-methods.min.js"></script>
 
     <!-- Bootstrap Core
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.js"></script> -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
 
     <!-- Bootstrap Select
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.0-beta/js/bootstrap-select.min.js"></script> -->

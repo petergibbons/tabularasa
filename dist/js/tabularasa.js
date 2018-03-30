@@ -39,8 +39,17 @@
         "26" : { img: "dist/img/ECAColor_03.png", thumb: "dist/img/thumbs/ECAColor_03_white.jpg", label: "Placement C", item_type: "Power Color", model_code: "PC499" },
     };
 
+    var tableWidths = [ "18", "24", "30", "36", "42", "48", "60" ];
+    var tableLengths = [ "42", "48", "60", "72", "84", "96", "120", "144", "168" ];
+    var tableHeights = [ "18", "24", "29", "36", "42" ];
+
+
 
 $(function() {
+
+    // normalize boostrap select styles
+        // remove .pull-left from bootstrap select
+        $(".filter-option").removeClass('pull-left');
 
     // table model chooser
     $(".table-chooser-menu li a").click(function(){
@@ -48,7 +57,7 @@ $(function() {
         $("#table-chooser").val($(this).text());
     });
 
-
+    // main product options
     $('.option-dropdown a').click(function(e) {
         
         var value = $(this).data("uid");
@@ -57,11 +66,11 @@ $(function() {
         var layer = $(this).data("layer");
         var thumb = $(this).find('img').attr('src');
 
-        // enable button text for the next option
-        // @@@ unsure we need this...  May just confound user
-        //      
-        // possibly user for requiring user to have selected a tabletop and hardware before adding an outlet type
-        // $('#selected_' + layer + ', #selected_' + (layer+1)).removeClass('disabled');
+            // enable button text for the next option
+            // @@@ unsure we need this...  May just confound user
+            //      
+            // possibly user for requiring user to have selected a tabletop and hardware before adding an outlet type
+            // $('#selected_' + layer + ', #selected_' + (layer+1)).removeClass('disabled');
 
         // change product image
         $('#prod-image-product_option'+layer).fadeOut(150, function() {
@@ -69,7 +78,7 @@ $(function() {
         });
 
         // change button thumbnail and label
-        $('#selected_' + layer +' img' ).attr('src', thumb);
+        $('#selected_' + layer +' img').attr('src', thumb);
         $('#selected_' + layer +' .text').text(data[value].label);
 
         // update model info
@@ -81,6 +90,25 @@ $(function() {
 
         e.preventDefault();
     });
+
+    // build table size selects
+    for ( i = 0; i < tableWidths.length; i++) {
+        $("#table-width").append('<option value="' + tableWidths[i] + '">' + tableWidths[i] +'"</option>');
+    }
+
+    for ( i = 0; i < tableLengths.length; i++) {
+        $("#table-length").append('<option value="' + tableLengths[i] + '">' + tableLengths[i] +'"</option>');
+    }
+
+    for ( i = 0; i < tableHeights.length; i++) {
+        $("#table-height").append('<option value="' + tableHeights[i] + '">' + tableHeights[i] +'"</option>');
+    }
+
+    for ( i = 0; i < 4; i++) {
+        $("#outlet-count").append('<option value="' + i + '">' + i +'</option>');
+    }
+
+
 
     // 'get a quote' button
     $('#buy').click(function(e) {
@@ -148,26 +176,46 @@ $(function() {
         }
     });
 
-
+    // get number of power boxes selected
+    function getOutletCount(){
+        var topCount = $('.added').length;
+        var sideCount = $('.added').length;
+        var totalCount = topCount + sideCount;
+        return totalCount;
+    }
 
     // Quote form validation
         $("#quote").validate({
             // Specify validation rules
             rules: {
-              // The key name on the left side is the name attribute
-              // of an input field. Validation rules are defined
-              // on the right side
-              Name: "required",
-              City_State: "required",
-              Phone: "required",
-              Email: {
-                required: true,
-                // Specify that email should be validated
-                // by the built-in "email" rule
-                email: true
-              },
-              Budget: "required"
-              
+                // The key name on the left side is the name attribute
+                // of an input field. Validation rules are defined
+                // on the right side
+                Name: {
+                    required: true,
+                    minlength: 2
+                },
+                City_State: "required",
+                Phone: {
+                    required: true,
+                    phoneUS: true
+                },
+                Email: {
+                    required: true,
+                    email: true
+                },
+                Table_Width: "required",
+                Table_Height: "required",
+                Table_Width: "required",
+                Project: "required"
+            },
+            messages: {
+
+                Phone: {
+                   // required: "Required",
+                    Phone: "Please enter a valid Phone Number"
+                    
+                }
             },
             // Make sure the form is submitted to the destination defined
             // in the "action" attribute of the form when valid
@@ -188,7 +236,8 @@ $(function() {
             $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
                 // do something...
                 //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
-                printObject(event)
+                //printObject(event)
+                //alert($('#top-outlet-type').val());
             });
 
 
