@@ -86,6 +86,7 @@ $(function() {
 
         // update model info
         $(".model-code-" + layer).html( "[" + data[value].model_code + "]");
+        // create global function to accept both power and table options
         $("#model-code").fadeIn();
 
         e.preventDefault();
@@ -232,15 +233,137 @@ $(function() {
         });
 
 
-        // callbacks for boostrap select (power options)
+        // TOP POWER OPTIONS
             $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
                 // do something...
                 //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
                 //printObject(event)
-                //alert($('#top-outlet-type').val());
+                //alert($('#top-outlet-type').val() + " : " + newValue);
+                //alert("clicked: " + clickedIndex + " : " + newValue);
+
+                
+                if( clickedIndex == '0' ){
+                    var layer = '5a'; // hardcode layer number
+                    // show top left
+                    if( newValue == false ){
+                        var imageURL = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-top-l.png";
+                        //alert('add image ' + imageURL)
+                    }
+                    
+                    
+                    // update model info
+                    var item_type = 'Power Top';
+                    var model_code = '[PbL]';
+
+                } else if ( clickedIndex == '1' ){
+                    var layer = '5b'; // hardcode layer number
+                    // show top middle
+                    if( newValue == false ){
+                        var imageURL = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-top-m.png";
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    var model_code = '[PaL]';
+
+                } else if ( clickedIndex == '2' ){
+                    var layer = '5c'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-top-r.png";
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    var model_code = '[PfL]';
+                }
+
+
+               // UPDATE SCREEN
+
+                // change product image
+                $('#prod-image-product_option'+layer).fadeOut(150, function() {
+                    $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
+                });
+
+                // update model code
+                $("#option_" + layer).html( item_type + " " + model_code);
+
             });
 
+             // SIDE POWER OPTIONS
+            $('#base-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
 
+                var item_type = 'Power Side';
+                if( clickedIndex == '0' ){
+                    var layer = '6a'; // hardcode layer number
+                    
+                    // show top left
+                    if( newValue == false ){  // clear selections
+                        var imageURL = "";
+                        var model_code = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-side-l.png";
+                        var model_code = "[PbL]";
+                        //alert('add image ' + imageURL)
+                    }
+                    
+                    
+
+                } else if ( clickedIndex == '1' ){
+                    var layer = '6b'; // hardcode layer number
+                    // show top middle
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-side-m.png";
+                        var model_code = '[PaL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    
+                    
+
+                } else if ( clickedIndex == '2' ){
+                    var layer = '6c'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    } else {
+                        var imageURL = "../dist/img/outlet-side-r.png";
+                        var model_code = '[PfL]';
+                        //alert('add image ' + imageURL)
+                    }
+
+                }
+
+                
+               // UPDATE SCREEN
+
+                // change product image
+                $('#prod-image-product_option'+layer).fadeOut(150, function() {
+                    $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
+                });
+
+                // update model code
+                if( model_code ){
+                    $("#model_code_" + layer).html( item_type + " " + model_code );
+                }
+
+            });
 
 
         // dev mode

@@ -182,8 +182,13 @@
                         <img id="prod-image-product_option2" style="z-index:1;" class="img-responsive product-option" />
                         <img id="prod-image-product_option3" style="z-index:1;" class="img-responsive product-option" />
                         <img id="prod-image-product_option4" style="z-index:1;" class="img-responsive product-option" src="dist/img/Loading_Table_Hardware.png" />
-                        <img id="prod-image-product_option5" style="z-index:1;" class="img-responsive product-option" />
-                        <img id="prod-image-product_option6" style="z-index:1;" class="img-responsive product-option" />
+                        <img id="prod-image-product_option5a" style="z-index:1;" class="img-responsive product-option product-option-power" /><!-- top power options -->
+                        <img id="prod-image-product_option5a" style="z-index:1;" class="img-responsive product-option product-option-power" /><!-- top power options -->
+                        <img id="prod-image-product_option5b" style="z-index:1;" class="img-responsive product-option product-option-power" /><!-- top power options -->
+                        <img id="prod-image-product_option5c" style="z-index:1;" class="img-responsive product-option product-option-power" /><!-- top power options -->
+                        <img id="prod-image-product_option6a" style="z-index:1;" class="img-responsive product-option" /><!-- side power options -->
+                        <img id="prod-image-product_option6b" style="z-index:1;" class="img-responsive product-option" /><!-- side power options -->
+                        <img id="prod-image-product_option6c" style="z-index:1;" class="img-responsive product-option" /><!-- side power options -->
                     </div><!-- #prod -->
 
                     <div id="model-code" style="display: none;">
@@ -192,8 +197,12 @@
                         <span class="model-code-2"></span>
                         <span class="model-code-3"></span>
                         <span class="model-code-4"></span>
-                        <span class="model-code-5"></span>
-                        <span class="model-code-6"></span>
+                        <span class="model-code-5a"></span>
+                        <span class="model-code-5b"></span>
+                        <span class="model-code-5c"></span>
+                        <span class="model-code-6a"></span>
+                        <span class="model-code-6b"></span>
+                        <span class="model-code-6c"></span>
                     </div>
                 
                 </div>
@@ -243,9 +252,9 @@
                             </div>
                             <div class="col-lg-6" id="table-dimensions">
                                 <h3>Table Dimensions</h3>
-                                    <div>Table Width: <select name="Table_Width" id="table-width"></select></div>
-                                    <div>Table Length: <select name="Table_Length" id="table-length"></select></div>
-                                    <div>Table Height: <select name="Table_Height" id="table-height"></select></div>
+                                    <div>Table Width: <select name="Table_Width" id="table-width" class="form-control"></select></div>
+                                    <div>Table Length: <select name="Table_Length" id="table-length" class="form-control"></select></div>
+                                    <div>Table Height: <select name="Table_Height" id="table-height" class="form-control"></select></div>
                             </div>
                             </div>
                          <div class="row">
@@ -255,13 +264,18 @@
                                     <div><span id="option_2"></span><span id="cost_2"></span></div>
                                     <div><span id="option_3"></span><span id="cost_3"></span></div>
                                     <div><span id="option_4"></span><span id="cost_4"></span></div>
-                                    <div><span id="option_5"></span><span id="cost_5"></span></div>
-                                    <div><span id="option_6"></span><span id="cost_6"></span></div>
+                                    <div><span id="option_5a"></span><span id="cost_5a"></span></div>
+                                    <div><span id="option_5b"></span><span id="cost_5b"></span></div>
+                                    <div><span id="option_5c"></span><span id="cost_5c"></span></div>
+                                    <div><span id="option_6a"></span><span id="cost_6a"></span></div>
+                                    <div><span id="option_6b"></span><span id="cost_6b"></span></div>
+                                    <div><span id="option_6c"></span><span id="cost_6c"></span></div>
+
                             </div>
 
                             <div id="table-quantity" class="col-lg-6">
                                 Table Quantity:
-                                <select name="Table Quantity">
+                                <select name="Table Quantity" class="form-control">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -285,7 +299,7 @@
                         
                                 <h3>Number of Power Boxes</h3> 
                                 <span id="outletCount"></span>
-                                <select name="Number of Outlets" id="outlet-count"></select>
+                                <select name="Number of Outlets" id="outlet-count" class="form-control"></select>
 
                                 <div id="power-boxes" style="display:none;">
                                     <h3>Power Box Style</h3>
@@ -542,18 +556,18 @@
                         <div class="power-options btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down">
                             <h3>Table Top Power</h3>
                             <select class="selectpicker" id="top-outlet-type" multiple title="Table Top Outlets" data-width="auto" data-size="3">
-                                <option data-content="<img src='dist/img/thumbs/outlet_left.png'>" title="Left">Left</option>
-                                <option data-content="<img src='dist/img/thumbs/outlet_middle.png'>" title="Middle">Middle</option>
-                                <option data-content="<img src='dist/img/thumbs/outlet_right.png'>" title="Right">Right</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_left.png' class='img-responsive'>" title="Left">Left</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_middle.png' class='img-responsive'>" title="Middle">Middle</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_right.png' class='img-responsive'>" title="Right">Right</option>
                             </select>
                         </div>
 
-                        <div class="power-options-base btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down">
+                        <div class="power-options power-options-base btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down">
                             <h3>Base Power</h3>
                             <select class="selectpicker" id="base-outlet-type" multiple title="Base Power Outlets">
-                                <option data-content="<img src='dist/img/thumbs/outlet_left.png'>" title="Left">Left</option>
-                                <option data-content="<img src='dist/img/thumbs/outlet_middle.png'>" title="Middle">Middle</option>
-                                <option data-content="<img src='dist/img/thumbs/outlet_right.png'>" title="Right">Right</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_left.png' class='img-responsive'>" title="Left">Left</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_middle.png' class='img-responsive'>" title="Middle">Middle</option>
+                                <option data-content="<img src='dist/img/thumbs/outlet_right.png' class='img-responsive'>" title="Right">Right</option>
                             </select>
                         </div>
 
