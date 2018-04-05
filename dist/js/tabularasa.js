@@ -151,10 +151,48 @@ $(function() {
     $('#download-spec').click(function(e) {
         //alert('PDF');
         // copy all pertintent data to pdf div
+        
+
+
         $( ".prod-wrapper" ).clone().appendTo( "#order-details-pdf" );
         $( "#order-details" ).clone().appendTo( "#order-details-pdf" );
 
-        var doc = new jsPDF();
+
+
+
+
+
+
+                // helper code:
+                         var doc = new jsPDF();
+                         //var form = $( "#quote" );
+                         //doc.addImage(imgData, 'JPEG',0,0,210,297);
+                         
+                        var name = "Name: " + $('[name="Name"]').val();
+                        var company = "Company: " + $('[name="Company"]').val();
+                        var citystate = "City/State: " + $('[name="City_State"]').val();
+                        var phone = "Phone: " + $('[name="Phone"]').val();
+
+                      //  var pdfText = "Name: " + name + "Company: " + company + "City/State: " + citystate + "Phone: " + Phone;
+                        
+                        doc.setFontSize(26);
+                        doc.setTextColor(92, 76, 76);
+
+                        doc.text(23, 81, name);
+                        doc.text(23, 122, company);
+                        doc.text(23, 162, citystate);
+                        doc.text(23, 202, phone);
+
+                       // doc.text(23, 81, pdfText);
+                        
+                         doc.save('test.pdf');
+
+
+
+
+
+
+       /* var doc = new jsPDF();
         var specialElementHandlers = {
             '#editor': function (element, renderer) {
                 return true;
@@ -165,7 +203,16 @@ $(function() {
             'elementHandlers': specialElementHandlers
         });
         doc.save('Hi5_Spec_Sheet.pdf');
+        */
         e.preventDefault();
+
+
+
+
+
+
+
+
     });
 
     // show power box options    
