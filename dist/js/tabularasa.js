@@ -51,7 +51,7 @@ $(function() {
         // remove .pull-left from bootstrap select
         $(".filter-option").removeClass('pull-left');
 
-    // table model chooser
+    // table model chooser dropdown
     $(".table-chooser-menu li a").click(function(){
         $("#table-chooser").text($(this).text());
         $("#table-chooser").val($(this).text());
@@ -83,6 +83,10 @@ $(function() {
 
         // update model info
         $("#option_" + layer).html( item_type + ": " + data[value].label);
+        $("#finish_name_" + layer).val( $(this).text() ); // hidden form fields
+
+        // update model info on pdf
+        $("#pdf_option_" + layer).html( item_type + ": " + data[value].label);
 
         // update model info
         $(".model-code-" + layer).html( "[" + data[value].model_code + "]");
@@ -91,6 +95,154 @@ $(function() {
 
         e.preventDefault();
     });
+
+
+
+
+
+        // TOP POWER OPTIONS
+            $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
+                // do something...
+                //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
+                //printObject(event)
+                //alert($('#top-outlet-type').val() + " : " + newValue);
+                //alert("clicked: " + clickedIndex + " : " + newValue);
+
+                if( clickedIndex == '0' ){
+                    var layer = '5a'; // hardcode layer number
+                    // show top left
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-top-l.png";
+                        var model_code = '[PbL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    
+                    
+                    // update model info
+                    var item_type = 'Power Top';
+                    
+
+
+                } else if ( clickedIndex == '1' ){
+                    var layer = '5b'; // hardcode layer number
+                    // show top middle
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-top-m.png";
+                        var model_code = '[PaL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    
+
+                } else if ( clickedIndex == '2' ){
+                    var layer = '5c'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-top-r.png";
+                        var model_code = '[PfL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    
+                }
+
+
+               // UPDATE SCREEN
+
+                // change product image
+                $('#prod-image-product_option'+layer).fadeOut(150, function() {
+                    $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
+                });
+
+                // update model code
+                $(".model-code-" + layer).html( model_code );
+
+                //$(".model-code-" + layer).html( item_type + " " + model_code);
+
+            });
+
+             // SIDE POWER OPTIONS
+            $('#base-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
+
+                var item_type = 'Power Side';
+                if( clickedIndex == '0' ){
+                    var layer = '6a'; // hardcode layer number
+                    
+                    // show top left
+                    if( newValue == false ){  // clear selections
+                        var imageURL = "";
+                        var model_code = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-side-l.png";
+                        var model_code = "[PxH]";
+                        //alert('add image ' + imageURL)
+                    }
+                    
+                    
+
+                } else if ( clickedIndex == '1' ){
+                    var layer = '6b'; // hardcode layer number
+                    // show top middle
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "../dist/img/outlet-side-m.png";
+                        var model_code = '[PyH]';
+                        //alert('add image ' + imageURL)
+                    }
+                    
+                    
+
+                } else if ( clickedIndex == '2' ){
+                    var layer = '6c'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    } else {
+                        var imageURL = "../dist/img/outlet-side-r.png";
+                        var model_code = '[PzH]';
+                        //alert('add image ' + imageURL)
+                    }
+
+                }
+
+                
+               // UPDATE SCREEN
+
+                // change product image
+                $('#prod-image-product_option'+layer).fadeOut(150, function() {
+                    $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
+                });
+
+                // update model code
+                
+                $(".model-code-" + layer).html( model_code );
+
+            });
+
+
+
+
+
 
     // build table size selects
     for ( i = 0; i < tableWidths.length; i++) {
@@ -163,52 +315,99 @@ $(function() {
 
 
 
-                // helper code:
-                         var doc = new jsPDF();
-                         //var form = $( "#quote" );
-                         //doc.addImage(imgData, 'JPEG',0,0,210,297);
-                         
-                        var name = "Name: " + $('[name="Name"]').val();
-                        var company = "Company: " + $('[name="Company"]').val();
-                        var citystate = "City/State: " + $('[name="City_State"]').val();
-                        var phone = "Phone: " + $('[name="Phone"]').val();
+// helper code:
+        var doc = new jsPDF();
 
-                      //  var pdfText = "Name: " + name + "Company: " + company + "City/State: " + citystate + "Phone: " + Phone;
-                        
-                        doc.setFontSize(26);
-                        doc.setTextColor(92, 76, 76);
+        var imgDataLogo = "data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMraHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjkyMTlGRTY4Q0Y3MzExRTFCQTZGOTUzRDhFQUI5MzhBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjkyMTlGRTY5Q0Y3MzExRTFCQTZGOTUzRDhFQUI5MzhBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTIxOUZFNjZDRjczMTFFMUJBNkY5NTNEOEVBQjkzOEEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OTIxOUZFNjdDRjczMTFFMUJBNkY5NTNEOEVBQjkzOEEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAABAQEBAQEBAQEBAQEBAQEBAQEB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"
+         
+        var name = "Name: " + $('[name="Name"]').val();
+        var email = "Email: " + $('[name="Email"]').val();
+        var company = "Company: " + $('[name="Company"]').val();
+        var citystate = "City/State: " + $('[name="City_State"]').val();
+        var phone = "Phone: " + $('[name="Phone"]').val();
+        var project_name = "Project Name: " + $('[name="Project"]').val();
 
-                        doc.text(23, 81, name);
-                        doc.text(23, 122, company);
-                        doc.text(23, 162, citystate);
-                        doc.text(23, 202, phone);
+        var tabletop_laminate = "Tabletop Laminate: " + $("finish_name_1").attr("value");
+        var edge_laminate = "Edge Laminate: " + $("finish_name_2").attr("value");
+        var accent_laminate = "Accent Laminate: " + $("finish_name_3").attr("value");
+        var bracket = "Bracket: " + $("finish_name_4").attr("value");
 
-                       // doc.text(23, 81, pdfText);
-                        
-                         doc.save('test.pdf');
+        var divider = "______________________________________________";
 
+        
+        doc.setFontSize(16);
+        doc.setTextColor(80, 77, 78);
 
-
+       // doc.addImage(imgDataLogo, 'JPEG', 15, 0, 34, 37); // logo
 
 
 
-       /* var doc = new jsPDF();
-        var specialElementHandlers = {
-            '#editor': function (element, renderer) {
-                return true;
+
+
+
+
+
+
+
+
+            ////// image will append to body just fine
+            // but will not work with toDataURL() in the pdf
+            //?????????????
+
+
+
+
+
+
+
+        //add product image
+        html2canvas($("#prod"), {
+            //backgroundColor : '#000000',
+            //width: '350',
+            //height: '200',
+            allowTaint: true,
+            onrendered: function(canvas) {
+               var imgData = canvas.toDataURL('image/jpeg');
+               doc.addImage(imgData, 'JPEG', 15, 0);
+                //console.log(imgData);
+                document.body.appendChild(canvas);
+                
             }
-        };
-        doc.fromHTML($('#order-details-pdf').html(), 15, 15, {
-            'width': 170,
-            'elementHandlers': specialElementHandlers
         });
-        doc.save('Hi5_Spec_Sheet.pdf');
-        */
+
+
+
+
+       // html2canvas(document.querySelector("#prod")).then(canvas => {
+       //     document.body.appendChild(canvas)
+       //     var imgData = canvas.toDataURL('image/jpeg');              
+       //     doc.addImage(imgData, 'JPEG', 100, 80);
+       // });
+
+        
+
+        // doc.text(15, 41, "Quote Prepared for: ")
+        // doc.text(23, 61, name);
+        // doc.text(23, 71, email);
+        // doc.text(23, 82, company);
+        // doc.text(23, 92, citystate);
+        // doc.text(23, 102, phone);
+        // doc.text(23, 112, project_name);
+
+        doc.text(15, 122, divider); 
+
+        doc.text(23, 132, tabletop_laminate);
+        doc.text(23, 142, edge_laminate);
+        doc.text(23, 152, accent_laminate);
+        doc.text(23, 162, bracket);
+
+       // doc.text(23, 81, pdfText);
+        
+         doc.save('Hi5_Spec_Sheet.pdf');
+
+
+
         e.preventDefault();
-
-
-
-
 
 
 
@@ -280,137 +479,7 @@ $(function() {
         });
 
 
-        // TOP POWER OPTIONS
-            $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
-                // do something...
-                //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
-                //printObject(event)
-                //alert($('#top-outlet-type').val() + " : " + newValue);
-                //alert("clicked: " + clickedIndex + " : " + newValue);
-
-                
-                if( clickedIndex == '0' ){
-                    var layer = '5a'; // hardcode layer number
-                    // show top left
-                    if( newValue == false ){
-                        var imageURL = "";
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "../dist/img/outlet-top-l.png";
-                        //alert('add image ' + imageURL)
-                    }
-                    
-                    
-                    // update model info
-                    var item_type = 'Power Top';
-                    var model_code = '[PbL]';
-
-                } else if ( clickedIndex == '1' ){
-                    var layer = '5b'; // hardcode layer number
-                    // show top middle
-                    if( newValue == false ){
-                        var imageURL = "";
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "../dist/img/outlet-top-m.png";
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    var model_code = '[PaL]';
-
-                } else if ( clickedIndex == '2' ){
-                    var layer = '5c'; // hardcode layer number
-                    // show top right
-                    if( newValue == false ){
-                        var imageURL = "";
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "../dist/img/outlet-top-r.png";
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    var model_code = '[PfL]';
-                }
-
-
-               // UPDATE SCREEN
-
-                // change product image
-                $('#prod-image-product_option'+layer).fadeOut(150, function() {
-                    $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
-                });
-
-                // update model code
-                $("#option_" + layer).html( item_type + " " + model_code);
-
-            });
-
-             // SIDE POWER OPTIONS
-            $('#base-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
-
-                var item_type = 'Power Side';
-                if( clickedIndex == '0' ){
-                    var layer = '6a'; // hardcode layer number
-                    
-                    // show top left
-                    if( newValue == false ){  // clear selections
-                        var imageURL = "";
-                        var model_code = "";
-                        var item_type = "";
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "../dist/img/outlet-side-l.png";
-                        var model_code = "[PbL]";
-                        //alert('add image ' + imageURL)
-                    }
-                    
-                    
-
-                } else if ( clickedIndex == '1' ){
-                    var layer = '6b'; // hardcode layer number
-                    // show top middle
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        var item_type = "";
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "../dist/img/outlet-side-m.png";
-                        var model_code = '[PaL]';
-                        //alert('add image ' + imageURL)
-                    }
-                    
-                    
-
-                } else if ( clickedIndex == '2' ){
-                    var layer = '6c'; // hardcode layer number
-                    // show top right
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var item_type = "";
-                        //alert('remove image');
-                    } else {
-                        var imageURL = "../dist/img/outlet-side-r.png";
-                        var model_code = '[PfL]';
-                        //alert('add image ' + imageURL)
-                    }
-
-                }
-
-                
-               // UPDATE SCREEN
-
-                // change product image
-                $('#prod-image-product_option'+layer).fadeOut(150, function() {
-                    $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
-                });
-
-                // update model code
-                if( model_code ){
-                    $("#model_code_" + layer).html( item_type + " " + model_code );
-                }
-
-            });
+      
 
 
         // dev mode
