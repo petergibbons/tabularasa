@@ -111,7 +111,7 @@
 
     			.prod-wrapper { max-width: 960px; }
 
-                .product-option { position: absolute; top: 0; left: 0; min-height:300px; }
+                .product-option { position: absolute; top: 0; left: 0; }
                 .options h3, .options #buy { margin-left: 15px; }
 
                 
@@ -120,15 +120,16 @@
                 .dropdown-menu,
                 div.bootstrap-select { width: 100% !important; min-width: 200px !important; text-transform: uppercase; }
 
-                div.bootstrap-select button { color: #333; }
+                div.bootstrap-select button { color: #333; }/* power dropdowns */
 
-                .bootstrap-select.btn-group .dropdown-toggle .filter-option { text-align: center !important; }
+                .bootstrap-select.btn-group .dropdown-toggle .filter-option { text-align: center !important; color: #333; width: 83% !important; padding-top: 3px; }/* power dropdowns */
+                .bs-caret {}
 
                 .btn-group img { margin-right: 5px; }
-                .btn-group h3, #order-details h3 { font-size: 12px; text-transform: uppercase; color: #666; font-weight: 400; }
+                .btn-group h3, #order-details h3 { font-size: 12px; text-transform: uppercase; color: #666; font-weight: 400;  }
                 
                 .dropdown-toggle, button { padding-right: 50px; font-size: 14px; height: 55px; }
-                .dropdown-toggle .glyphicon,div.bootstrap-select { margin-left: 5px; margin-right: -40px; color: #ccc; }
+                .dropdown-toggle .glyphicon, div.bootstrap-select { margin-left: 5px; margin-right: -40px; color: #ccc; }
                 
                 .dropdown-menu { height: 200px; overflow:auto; }
                     .dropdown-menu>li { font-size: 13px; font-weight: 400; } 
@@ -136,11 +137,7 @@
                         .dropdown-toggle img { -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; width: 25px; }
 
                        .dropdown-menu>li>a{
-                         -webkit-transition: color .2s linear;
-                          -moz-transition: color .2s linear;
-                          -ms-transition: color .2s linear;
-                          -o-transition: color .2s linear;
-                          transition: color .2s linear;
+                         -webkit-transition: color .2s linear; -moz-transition: color .2s linear; -ms-transition: color .2s linear; -o-transition: color .2s linear; transition: color .2s linear;
                       }
                     .dropdown-menu>li>a:hover { background: #f6f6f6; color: #7DBE4C; } 
                 
@@ -208,8 +205,8 @@
                 </div>
                 <div class="col-lg-4 align-left no-gutters" id="sidebar">
                 	<form id="quote" method="get" action="">
-                    
-                    <div id="order-details">
+                        <input type="hidden" name="Table_Type" value="Union 2.0" />
+                    <div id="order-details" style="display:none;">
                         <div>
                         	<button id="edit-config" class="btn btn-small btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Table Configuration</button>
                         </div>
@@ -259,23 +256,11 @@
                             </div>
                          <div class="row">
                             <div id="finishes-chosen" class="col-lg-6">
-                                <h3>Finishes:</h3>
-                                    <div><span id="option_1"></span><span id="cost_1"></span></div>
-                                    <div><span id="option_2"></span><span id="cost_2"></span></div>
-                                    <div><span id="option_3"></span><span id="cost_3"></span></div>
-                                    <div><span id="option_4"></span><span id="cost_4"></span></div>
-                                    <div><span id="option_5a"></span><span id="cost_5a"></span></div>
-                                    <div><span id="option_5b"></span><span id="cost_5b"></span></div>
-                                    <div><span id="option_5c"></span><span id="cost_5c"></span></div>
-                                    <div><span id="option_6a"></span><span id="cost_6a"></span></div>
-                                    <div><span id="option_6b"></span><span id="cost_6b"></span></div>
-                                    <div><span id="option_6c"></span><span id="cost_6c"></span></div>
-
-                                    <input type="hidden" name="TableTop" id="finish_name_1" />
-                                    <input type="hidden" name="Edge" id="finish_name_2" />
-                                    <input type="hidden" name="Accent" id="finish_name_3" />
-                                    <input type="hidden" name="Bracket" id="finish_name_4" />
-
+                                
+                                <!-- finishes were here --><div>
+                                    <h3>Notes</h3>
+                                    <textarea class="form-control" name="Notes"></textarea>
+                                </div>
                             </div>
 
                             <div id="table-quantity" class="col-lg-6">
@@ -292,10 +277,23 @@
                                     <option value="9+">9+</option>
                                 </select>
 
-                                <div>
-                                    <h3>Notes</h3>
-                                    <textarea class="form-control" name="Notes"></textarea>
-                                </div>
+                                <h3>Finishes:</h3>
+                                    <div><span id="option_1"></span><span id="cost_1"></span></div>
+                                    <div><span id="option_2"></span><span id="cost_2"></span></div>
+                                    <div><span id="option_3"></span><span id="cost_3"></span></div>
+                                    <div><span id="option_4"></span><span id="cost_4"></span></div>
+                                    <div><span id="option_5a"></span><span id="cost_5a"></span></div>
+                                    <div><span id="option_5b"></span><span id="cost_5b"></span></div>
+                                    <div><span id="option_5c"></span><span id="cost_5c"></span></div>
+                                    <div><span id="option_6a"></span><span id="cost_6a"></span></div>
+                                    <div><span id="option_6b"></span><span id="cost_6b"></span></div>
+                                    <div><span id="option_6c"></span><span id="cost_6c"></span></div>
+
+                                    <input type="hidden" name="TableTop" id="finish_name_1" />
+                                    <input type="hidden" name="Edge" id="finish_name_2" />
+                                    <input type="hidden" name="Accent" id="finish_name_3" />
+                                    <input type="hidden" name="Bracket" id="finish_name_4" />
+                                
                             </div>
                         </div>
 
@@ -308,20 +306,21 @@
 
                                 <div id="power-boxes" style="display:none;">
                                     <h3>Power Box Style [need assets]</h3>
-                                    <div><input type="radio" name="Power Box" value="Cove" /> Cove</div>
-                                    <div><input type="radio" name="Power Box" value="Villa" /> Villa</div>
-                                    <div><input type="radio" name="Power Box" value="Seclusion" /> Seclusion</div>
-                                    <div><input type="radio" name="Power Box" value="Interact G2" /> Interact G2</div>
-                                    <div><input type="radio" name="Power Box" value="Interface IITT" /> Interface IITT</div>
-                                    <div><input type="radio" name="Power Box" value="Reef" /> Reef</div>
-                                    <div><input type="radio" name="Power Box" value="Mini-Outlets" /> Mini-Outlets</div>
-                                    <div><input type="radio" name="Power Box" value="None" /> None</div>
+                                    <div><input type="radio" name="Power_Box" value="Cove" /> Cove</div>
+                                    <div><input type="radio" name="Power_Box" value="Villa" /> Villa</div>
+                                    <div><input type="radio" name="Power_Box" value="Seclusion" /> Seclusion</div>
+                                    <div><input type="radio" name="Power_Box" value="Interact G2" /> Interact G2</div>
+                                    <div><input type="radio" name="Power_Box" value="Interface IITT" /> Interface IITT</div>
+                                    <div><input type="radio" name="Power_Box" value="Reef" /> Reef</div>
+                                    <div><input type="radio" name="Power_Box" value="Mini-Outlets" /> Mini-Outlets</div>
+                                    <div><input type="radio" name="Power_Box" value="None" /> None</div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 
                             </div>
                         </div>
+
                             
                         <div id="submit-quote-wrapper">
                             <button id="submit-quote" class="btn btn-success btn-lg">Submit Quote Request</button>
@@ -627,9 +626,11 @@
     <!-- HTML2Canvas -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta3/html2canvas.js"></script>
 
+    <!-- Smtp.js -->
+    <script src="//smtpjs.com/v2/smtp.js"></script>
+
     <!-- App JS -->
     <script src="dist/js/tabularasa.js"></script>
-
 
 </body>
 
