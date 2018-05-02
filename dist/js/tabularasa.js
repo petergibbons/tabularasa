@@ -125,7 +125,7 @@ $(function() {
                         var model_code = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "../dist/img/outlet-top-l.png";
+                        var imageURL = "dist/img/outlet-top-l.png";
                         var model_code = '[PbL]';
                         //alert('add image ' + imageURL)
                     }
@@ -144,7 +144,7 @@ $(function() {
                         var model_code = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "../dist/img/outlet-top-m.png";
+                        var imageURL = "dist/img/outlet-top-m.png";
                         var model_code = '[PaL]';
                         //alert('add image ' + imageURL)
                     }
@@ -159,7 +159,7 @@ $(function() {
                         var model_code = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "../dist/img/outlet-top-r.png";
+                        var imageURL = "dist/img/outlet-top-r.png";
                         var model_code = '[PfL]';
                         //alert('add image ' + imageURL)
                     }
@@ -197,7 +197,7 @@ $(function() {
                         var item_type = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "../dist/img/outlet-side-l.png";
+                        var imageURL = "dist/img/outlet-side-l.png";
                         var model_code = "[PxH]";
                         //alert('add image ' + imageURL)
                     }
@@ -213,7 +213,7 @@ $(function() {
                         var item_type = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "../dist/img/outlet-side-m.png";
+                        var imageURL = "dist/img/outlet-side-m.png";
                         var model_code = '[PyH]';
                         //alert('add image ' + imageURL)
                     }
@@ -228,7 +228,7 @@ $(function() {
                         var item_type = "";
                         //alert('remove image');
                     } else {
-                        var imageURL = "../dist/img/outlet-side-r.png";
+                        var imageURL = "dist/img/outlet-side-r.png";
                         var model_code = '[PzH]';
                         //alert('add image ' + imageURL)
                     }
