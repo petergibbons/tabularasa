@@ -7,8 +7,10 @@
 //$("#page-wrapper2").Prefetch();
     
 
-    // 1-36 BRACKETS
-    // 2-?? TABLETOP
+// * * * * * * * * * *
+// get url parameters
+// set data object 
+// * * * * * * * * * *
 
 function getFileName() {
     //this gets the full url
@@ -332,6 +334,34 @@ if( getFileName() == "coby-hybrid.html") {
         "298" : { img: "dist/img/Scene02_CobyHybrid/ACCENT/Scene02CobyHybrid_Accent_Xanadu_7945K-18.png", thumb: "dist/img/thumbs/", label: "Xanadu", item_type: "Accent Laminate", model_code: "7945K-18" },
         "299" : { img: "dist/img/Scene02_CobyHybrid/ACCENT/Scene02CobyHybrid_Accent_Zanzibar_7957K-78.png", thumb: "dist/img/thumbs/", label: "Zanzibar", item_type: "Accent Laminate", model_code: "7957K-78" },
         "300" : { img: "dist/img/Scene02_CobyHybrid/ACCENT/Scene02CobyHybrid_Accent_Zebrawood_7980K-18.png", thumb: "dist/img/thumbs/", label: "Zebrawood", item_type: "Accent Laminate", model_code: "7980K-18" },
+
+        "301" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PAL_BJ.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PAL_BJ" },
+        "302" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PAL_GW.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PAL_GW" },
+        "303" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PAL_SP.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PAL_SP" },
+
+        "304" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PBL_BJ.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PBL_BJ" },
+        "305" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PBL_GW.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PBL_GW" },
+        "306" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PBL_SP.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PBL_SP" },
+        
+        "307" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PCL_BJ.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PCL_BJ" },
+        "308" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PCL_GW.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PCL_GW" },
+        "309" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PCL_SP.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PCL_SP" },
+
+        "310" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PDL_BJ.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PDL_BJ" },
+        "311" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PDL_GW.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PDL_GW" },
+        "312" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PDL_SP.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PDL_SP" },
+
+        "313" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PEL_BJ.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PEL_BJ" },
+        "314" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PEL_GW.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PEL_GW" },
+        "315" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PEL_SP.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PEL_SP" },
+
+        "316" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PFL_BJ.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PFL_BJ" },
+        "317" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PFL_GW.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PFL_GW" },
+        "318" : { img: "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PFL_SP.png", thumb: "dist/img/thumbs/", label: "", item_type: "ECA", model_code: "PFL_SP" },
+
+        "319" : { img: "dist/img/ECAColor_01_silver.jpg", thumb: "dist/img/thumbs/", label: "Silver", item_type: "BJ", model_code: "" },
+        "320" : { img: "dist/img/ECAColor_02_black.jpg", thumb: "dist/img/thumbs/", label: "Black", item_type: "GW", model_code: "" },
+        "321" : { img: "dist/img/ECAColor_03_white.jpg", thumb: "dist/img/thumbs/", label: "White", item_type: "SP", model_code: "" },
         
     };
     var tableType = "Coby Hybrid";
@@ -388,8 +418,10 @@ if( getFileName() == "coby-hybrid.html") {
 $(function() {
 
 
-    
+    // * * * * * * * * * *
     // table model chooser dropdown
+    // * * * * * * * * * *
+
     $(".table-chooser-menu a").click(function(){
 
         alert('table choosen');
@@ -398,10 +430,12 @@ $(function() {
         //return false;
     });
 
+    // * * * * * * * * * *
     // add table types to table chooser dropdown
-    //<div class="media"><div class="media-left"><a href="#"><img class="media-object" src="..." alt="..."></a></div><div class="media-body"><h4 class="media-heading">Media heading</h4></div></div>
+    // * * * * * * * * * *
+
         $(".table-chooser-menu").append('<li><a href="#">Casters</a></li>');
-        $(".table-chooser-menu").append('<li><a href="#">Coby Hybrid</a></li>');
+        $(".table-chooser-menu").append('<li><a href="coby-hybrid.html">Coby Hybrid</a></li>');
         $(".table-chooser-menu").append('<li><a href="#">Cubby</a></li>');
         $(".table-chooser-menu").append('<li><a href="#">Foot Rails</a></li>');
         $(".table-chooser-menu").append('<li><a href="#">Full Modesty</a></li>');
@@ -410,7 +444,10 @@ $(function() {
         $(".table-chooser-menu").append('<li><a href="#">No Hardware</a></li>');
         $("#table-chooser").css('text-transform','none');
 
+    // * * * * * * * * * *
     // main product options
+    // * * * * * * * * * *
+
     $('.option-dropdown a').click(function(e) {
         
         var value = $(this).data("uid");
@@ -458,21 +495,25 @@ $(function() {
         e.preventDefault();
     });
 
-            // normalize boostrap select styles on 'loaded' event
+        // * * * * * * * * * *            
+        // Normalize boostrap select styles on 'loaded' event
+        // * * * * * * * * * *
 
-            $('#top-outlet-type').on('loaded.bs.select', function () {
-                    // remove .pull-left from bootstrap select
-                    $(".filter-option").removeClass('pull-left');
+        $('#top-outlet-type').on('loaded.bs.select', function () {
+                // remove .pull-left from bootstrap select
+                $(".filter-option").removeClass('pull-left');
 
-                    // replace caret with cool kids one
-                    $(".bs-caret").html('<span class="glyphicon glyphicon-chevron-down"></span>');
+                // replace caret with cool kids one
+                $(".bs-caret").html('<span class="glyphicon glyphicon-chevron-down"></span>');
 
-                    //$(".caret").addClass("glyphicon glyphicon-chevron-down faux-chevron");
-                    //$(".bs-caret .caret").removeClass("caret");
-            });
+                //$(".caret").addClass("glyphicon glyphicon-chevron-down faux-chevron");
+                //$(".bs-caret .caret").removeClass("caret");
+        });
 
-
+        // * * * * * * * * * *
         // TOP POWER OPTIONS
+        // * * * * * * * * * *
+
             $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
                 // do something...
                 //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
@@ -488,16 +529,15 @@ $(function() {
                         var model_code = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "dist/img/outlet-top-l.png";
-                        var model_code = '[PbL]';
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PCL_SP.png";
+                        var model_code = '[PbL_SP]';
                         //alert('add image ' + imageURL)
                     }
                     
                     
                     // update model info
                     var item_type = 'Power Top';
-                    
-
+   
 
                 } else if ( clickedIndex == '1' ){
                     var layer = '5b'; // hardcode layer number
@@ -507,8 +547,8 @@ $(function() {
                         var model_code = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "dist/img/outlet-top-m.png";
-                        var model_code = '[PaL]';
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PAL_SP.png";
+                        var model_code = '[PaL_SP]';
                         //alert('add image ' + imageURL)
                     }
                     var item_type = 'Power Top';
@@ -522,8 +562,8 @@ $(function() {
                         var model_code = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "dist/img/outlet-top-r.png";
-                        var model_code = '[PfL]';
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PBL_SP.png";
+                        var model_code = '[PcL_SP]';
                         //alert('add image ' + imageURL)
                     }
                     var item_type = 'Power Top';
@@ -531,7 +571,7 @@ $(function() {
                 }
 
 
-               // UPDATE SCREEN
+                // UPDATE SCREEN
 
                 // change product image
                 $('#prod-image-product_option'+layer).fadeOut(150, function() {
@@ -542,12 +582,14 @@ $(function() {
                 $(".model-code-" + layer).html( model_code );
                 $("#model-code").fadeIn();
 
-                //$(".model-code-" + layer).html( item_type + " " + model_code);
-
             });
 
+        // * * * * * * * * * *
         // SIDE POWER OPTIONS
-            $('#base-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
+        // * * * * * * * * * *
+
+
+            $('#base-outlet-type').on('changed.bs.select', function(e,clickedIndex,newValue,oldValue) {
 
                 var item_type = 'Power Side';
                 if( clickedIndex == '0' ){
@@ -560,8 +602,8 @@ $(function() {
                         var item_type = "";
                         //alert('remove image');
                     }else {
-                        var imageURL = "dist/img/outlet-side-l.png";
-                        var model_code = "[PxH]";
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PBL_SP.png";
+                        var model_code = "[PBL_SP]";
                         //alert('add image ' + imageURL)
                     }
                     
@@ -588,6 +630,7 @@ $(function() {
                     // show top right
                     if( newValue == false ){
                         var imageURL = "";
+                        var model_code = "";
                         var item_type = "";
                         //alert('remove image');
                     } else {
@@ -599,7 +642,7 @@ $(function() {
                 }
 
                 
-               // UPDATE SCREEN
+                // UPDATE SCREEN
 
                 // change product image
                 $('#prod-image-product_option'+layer).fadeOut(150, function() {
@@ -609,14 +652,17 @@ $(function() {
                 // update model code
                 
                 $(".model-code-" + layer).html( model_code );
+                $("#model-code").fadeIn();
 
             });
 
 
 
-
+    // * * * * * * * * * *
     // build table size selects
     // change options above
+    // * * * * * * * * * *
+
     for ( i = 0; i < tableWidths.length; i++) {
         $("#table-width").append('<option value="' + tableWidths[i] + '">' + tableWidths[i] +'"</option>');
     }
@@ -633,7 +679,10 @@ $(function() {
         $("#outlet-count").append('<option value="' + i + '">' + i +'</option>');
     }
 
+    // * * * * * * * * * *
     // 'get a quote' button
+    // * * * * * * * * * *
+
     $('#buy').click(function(e) {
         // alert('It puts the quote in the bucket');
         $('.options').fadeOut('fast', function() {
@@ -645,7 +694,10 @@ $(function() {
         e.preventDefault();
     });
 
+    // * * * * * * * * * *
     // allow user to go back and edit table config
+    // * * * * * * * * * *
+
     $('#edit-config').click(function(e) {
         $('#order-details').fadeOut('fast', function() {
             $('.options').fadeIn();
@@ -671,7 +723,10 @@ $(function() {
         
     }
     
-    // render a pdf for download
+    // * * * * * * * * * *
+    // Render a pdf for download
+    // * * * * * * * * * *
+
     $('#download-spec').click(function(e) {
         
 
@@ -730,8 +785,11 @@ $(function() {
 
     });
 
+    // * * * * * * * * * *
     // show power box options 
     // if chosen in configurator   
+    // * * * * * * * * * *
+
     $("#outlet-count").change(function () {
         if ($(this).val() >= 1) {
             $("#power-boxes").show();
@@ -740,7 +798,11 @@ $(function() {
         }
     });
 
+    // * * * * * * * * * *
     // get number of power boxes selected
+    // currently unused
+    // * * * * * * * * * *
+
     function getOutletCount(){
         var topCount = $('.added').length;
         var sideCount = $('.added').length;
@@ -748,7 +810,10 @@ $(function() {
         return totalCount;
     }
 
+    // * * * * * * * * * *
     // Quote form validation
+    // * * * * * * * * * *
+
         $("#quote").submit(function(e){
             e.preventDefault();
         }).validate({
@@ -847,8 +912,10 @@ $(function() {
 
       
 
-
+        // * * * * * * * * * *
         // dev mode
+        // * * * * * * * * * *
+
         $(':button').removeClass('disabled');
 
         function printObject(o) {
@@ -856,15 +923,18 @@ $(function() {
             for (var p in o) {
                 out += '\n' + ':: ' + p + '(' + typeof(o[p]) + ') ::' + '\n' + o[p] + '\n';
             }
-            console.log(out);
+            //console.log(out);
         }
     
 
-
+    // * * * * * * * * * *
     // traverse $data and output .options
     // aim to list out all option dropdowns
     // without having to hardcode all options
-/* maybe v3
+    // * * * * * * * * * *
+
+    /* maybe v3
+
     var result = "";
 
     function buildProductDropdowns(key,value) { 
