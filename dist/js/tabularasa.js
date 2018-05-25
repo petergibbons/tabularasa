@@ -530,7 +530,7 @@ $(function() {
                         //alert('remove image');
                     }else {
                         var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PCL_SP.png";
-                        var model_code = '[PbL_SP]';
+                        var model_code = '[PbL]';
                         //alert('add image ' + imageURL)
                     }
                     
@@ -548,7 +548,7 @@ $(function() {
                         //alert('remove image');
                     }else {
                         var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PAL_SP.png";
-                        var model_code = '[PaL_SP]';
+                        var model_code = '[PaL]';
                         //alert('add image ' + imageURL)
                     }
                     var item_type = 'Power Top';
@@ -563,7 +563,49 @@ $(function() {
                         //alert('remove image');
                     }else {
                         var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PBL_SP.png";
-                        var model_code = '[PcL_SP]';
+                        var model_code = '[PcL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    
+                } else if ( clickedIndex == '3' ){
+                    var layer = '5d'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PDL_SP.png";
+                        var model_code = '[PdL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    
+                } else if ( clickedIndex == '4' ){
+                    var layer = '5e'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PEL_SP.png";
+                        var model_code = '[PeL]';
+                        //alert('add image ' + imageURL)
+                    }
+                    var item_type = 'Power Top';
+                    
+                } else if ( clickedIndex == '5' ){
+                    var layer = '5f'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        //alert('remove image');
+                    }else {
+                        var imageURL = "dist/img/Scene02_CobyHybrid/ECA/Scene02CobyHybrid_ECA_ECA-PFL_SP.png";
+                        var model_code = '[PfL]';
                         //alert('add image ' + imageURL)
                     }
                     var item_type = 'Power Top';
@@ -626,6 +668,22 @@ $(function() {
                     
 
                 } else if ( clickedIndex == '2' ){
+                    var layer = '6c'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        var item_type = "";
+                        //alert('remove image');
+                    } else {
+                        var imageURL = "dist/img/outlet-side-r.png";
+                        var model_code = '[PzH]';
+                        //alert('add image ' + imageURL)
+                    }
+
+                }
+
+                 else if ( clickedIndex == '2' ){
                     var layer = '6c'; // hardcode layer number
                     // show top right
                     if( newValue == false ){
@@ -715,10 +773,13 @@ $(function() {
         var m5a = $(".model-code-5a").text();
         var m5b = $(".model-code-5b").text();
         var m5c = $(".model-code-5c").text();
+        var m5c = $(".model-code-5d").text();
+        var m5c = $(".model-code-5e").text();
+        var m5c = $(".model-code-5f").text();
         var m6a = $(".model-code-6a").text();
         var m6b = $(".model-code-6b").text();
         var m6c = $(".model-code-6c").text();
-        var modelCode = m1 + m2 + m3 + m4 + m5a + m5b + m5c + m6a + m6b + m6c; 
+        var modelCode = m1 + m2 + m3 + m4 + m5a + m5b + m5c + m5d + m5e + m5f  + m6a + m6b + m6c; 
         return modelCode;
         
     }
