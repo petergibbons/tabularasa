@@ -506,7 +506,7 @@ $(function() {
 
                 var edgeImage = data[value].img;
                 edgeImage = edgeImage.replace( '_Laminate_', '_Edge_' );
-                edgeImage = edgeImage.replace( 'LAMINATE', 'EDGE' );
+                edgeImage = edgeImage.replace( 'Laminate', 'Edge' );
 
                 // change product image
                 $('#prod-image-product_option2').fadeOut(150, function() {
