@@ -397,37 +397,30 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
     "297" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Wide_Planked_Walnut_9479.png", label: "Planked Walnut", item_type: "Accent Laminate", model_code: "9479" },
     "298" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Xanadu_7945K-18.png", label: "Xanadu", item_type: "Accent Laminate", model_code: "7945K-18" },
     "299" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Zanzibar_7957K-78.png", label: "Zanzibar", item_type: "Accent Laminate", model_code: "7957K-78" },
-    "300" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Zebrawood_7980K-18.png", label: "Zebrawood", item_type: "Accent Laminate", model_code: "7980K-18" },
-    "301" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PAL_BJ.png", label: "", item_type: "ECA", model_code: "PAL_BJ" },
-    "302" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PAL_GW.png", label: "", item_type: "ECA", model_code: "PAL_GW" },
-    "303" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PAL_SP.png", label: "", item_type: "ECA", model_code: "PAL_SP" },
-    "304" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PBL_BJ.png", label: "", item_type: "ECA", model_code: "PBL_BJ" },
-    "305" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PBL_GW.png", label: "", item_type: "ECA", model_code: "PBL_GW" },
-    "306" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PBL_SP.png", label: "", item_type: "ECA", model_code: "PBL_SP" },
-    "307" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PCL_BJ.png", label: "", item_type: "ECA", model_code: "PCL_BJ" },
-    "308" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PCL_GW.png", label: "", item_type: "ECA", model_code: "PCL_GW" },
-    "309" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PCL_SP.png", label: "", item_type: "ECA", model_code: "PCL_SP" },
-    "310" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PDL_BJ.png", label: "", item_type: "ECA", model_code: "PDL_BJ" },
-    "311" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PDL_GW.png", label: "", item_type: "ECA", model_code: "PDL_GW" },
-    "312" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PDL_SP.png", label: "", item_type: "ECA", model_code: "PDL_SP" },
-    "313" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PEL_BJ.png", label: "", item_type: "ECA", model_code: "PEL_BJ" },
-    "314" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PEL_GW.png", label: "", item_type: "ECA", model_code: "PEL_GW" },
-    "315" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PEL_SP.png", label: "", item_type: "ECA", model_code: "PEL_SP" },
-    "316" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PFL_BJ.png", label: "", item_type: "ECA", model_code: "PFL_BJ" },
-    "317" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PFL_GW.png", label: "", item_type: "ECA", model_code: "PFL_GW" },
-    "318" : { img: "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PFL_SP.png", label: "", item_type: "ECA", model_code: "PFL_SP" },
+    "300" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Zebrawood_7980K-18.png", label: "Zebrawood", item_type: "Accent Laminate", model_code: "7980K-18" }
 };
-
-
-
+    
+ 
     var tableWidths = [ "18", "24", "30", "36", "42", "48", "60" ];
     var tableLengths = [ "42", "48", "60", "72", "84", "96", "120", "144", "168" ];
     var tableHeights = [ "18", "24", "29", "36", "42" ];
     var numberOfOutlets = 0;
     var firstRun = true;
-
+    var images = new Array();
 
 $(function() {
+
+
+    // preload images
+    function preloadImages(key,value) {
+        console.log(key + ':' + '../' + value.img);
+        images[key] = new Image();
+        images[key].src = '../' + value.img;
+    }
+
+    Object.entries(data).forEach(
+        ([key, value]) => preloadImages(key,value)
+    );
 
 
     // * * * * * * * * * *
@@ -1083,9 +1076,8 @@ $(function() {
     // traverse $data and output .options
     // aim to list out all option dropdowns
     // without having to hardcode all options
-    // * * * * * * * * * *
-
     /* maybe v3
+    // * * * * * * * * * *
 
     var result = "";
 
