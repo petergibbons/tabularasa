@@ -434,10 +434,20 @@ table.dataTable thead .sorting:after {
 }
 /* END BOOTSTRAPPER */
 
+          .form-control:focus {
+              border-color: #7DBE4C;
+              -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(125, 190, 76,.6);
+              box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(125, 190, 76,.6);
+          }
+
+          .btn-success {
+              background-color: #7DBE4C;
+          }
+
           .navbar { background: #504D4E; color: #fff; }
               .navbar a { color: #fff; }
 
-              .table-chooser-wrapper { padding: 10px 15px; }
+              .table-chooser-wrapper { padding: 10px 15px; margin-left: 15px; }
               .table-chooser-menu { font-size: 15px; margin-left: 10px; color: #7DBE4C; font-weight: 400; }
                 .table-chooser-menu li a:hover { cursor: pointer; }
               .navbar .table-chooser-wrapper button { background-color: #504D4E; color: #7DBE4C; border: 2px solid #333; font-size: 21px; }
@@ -462,8 +472,6 @@ table.dataTable thead .sorting:after {
           .product-option { position: absolute; top: 0; left: 0; }
           .options h3, .options #buy { margin-left: 15px; }
           
-      
-
           .dropdown-toggle,
           .dropdown-menu,
           div.bootstrap-select { width: 100% !important; min-width: 200px !important; text-transform: uppercase; }
