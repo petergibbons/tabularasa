@@ -467,7 +467,7 @@ table.dataTable thead .sorting:after {
           .no-gutters > [class^="col-"],
           .no-gutters > [class*=" col-"] { padding-right: 0; padding-left: 0; }
 
-          .prod-wrapper { max-width: 960px; }
+          .prod-wrapper { /*max-width: 960px;*/ }
 
           .product-option { position: absolute; top: 0; left: 0; }
           .options h3, .options #buy { margin-left: 15px; }
@@ -485,6 +485,7 @@ table.dataTable thead .sorting:after {
           .btn-group h3, #order-details h3 { font-size: 12px; text-transform: uppercase; color: #666; font-weight: 400;  }
           
           .dropdown-toggle, button { padding-right: 50px; font-size: 13px; height: 55px; }
+
           .dropdown-toggle .glyphicon, div.bootstrap-select { margin-left: 5px; margin-right: -40px; color: #ccc; }
           
           .dropdown-menu { height: 200px; overflow:auto; }

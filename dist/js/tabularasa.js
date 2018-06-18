@@ -133,7 +133,6 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
     "34" : { img: "dist/img/" + folderUrl + "/Bracket/" + fileUrl + "_Bracket_SunshineYellow[SYW].png", label: "Sunshine Yellow", item_type: "Bracket", model_code: "SYW" },
     "35" : { img: "dist/img/" + folderUrl + "/Bracket/" + fileUrl + "_Bracket_Sweet_Plum[SPM].png", label: "Sweet Plum", item_type: "Bracket", model_code: "SPM" },
     "36" : { img: "dist/img/" + folderUrl + "/Bracket/" + fileUrl + "_Bracket_Vintage_Teal[VTL].png", label: "Vintage Teal", item_type: "Bracket", model_code: "VTL" },
-
     "37" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_5th_Ave_Elm_7966K_12.png", label: "5th Ave Elm", item_type: "Laminate", model_code: "7966K-12" },
     "38" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Amarena_6907.png", label: "Amarena", item_type: "Laminate", model_code: "6907" },
     "39" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Amber_Alona_Y0289.png", label: "Amber Alona", item_type: "Laminate", model_code: "7919-78" },
@@ -410,10 +409,64 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
 
 $(function() {
 
+    if( tableType == "Multi Heights" ){
 
-    // preload images
+        // add extra ECA layers
+        $("#prod").append('<img id="prod-image-product_option5g" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5h" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5i" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5j" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5k" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5l" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5m" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5n" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5o" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5p" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5q" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        $("#prod").append('<img id="prod-image-product_option5r" style="z-index:1;" class="img-responsive product-option product-option-power">');
+
+        // add extra options to options dropdown
+        // *************
+
+        $("#top-outlet-type").html('<option data-content="<img src=\'dist/img/thumbs/ECA-PBL-29.png\' class=\'img-responsive\'>" title="PbL29">PbL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PAL-29.png\' class=\'img-responsive\'>" title="PaL29">PaL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PCL-29.png\' class=\'img-responsive\'>" title="PcL29">PcL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PDL-29.png\' class=\'img-responsive\'>" title="PdL29">PdL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PEL-29.png\' class=\'img-responsive\'>" title="PeL29">PeL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PFL-29.png\' class=\'img-responsive\'>" title="PfL29">PfL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PBL-36.png\' class=\'img-responsive\'>" title="PbL36">PbL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PAL-36.png\' class=\'img-responsive\'>" title="PaL36">PaL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PCL-36.png\' class=\'img-responsive\'>" title="PcL36">PcL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PDL-36.png\' class=\'img-responsive\'>" title="PdL36">PdL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PEL-36.png\' class=\'img-responsive\'>" title="PeL36">PeL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PFL-36.png\' class=\'img-responsive\'>" title="PfL36">PfL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PBL-42.png\' class=\'img-responsive\'>" title="PbL42">PbL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PAL-42.png\' class=\'img-responsive\'>" title="PaL42">PaL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PCL-42.png\' class=\'img-responsive\'>" title="PcL42">PcL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PDL-42.png\' class=\'img-responsive\'>" title="PdL42">PdL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PEL-42.png\' class=\'img-responsive\'>" title="PeL42">PeL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/ECA-PFL-42.png\' class=\'img-responsive\'>" title="PfL42">PfL 42</option>\
+        ');
+
+        // add model code layers
+        $( '<span class="model-code-5g"></span>\
+            <span class="model-code-5h"></span>\
+            <span class="model-code-5i"></span>\
+            <span class="model-code-5j"></span>\
+            <span class="model-code-5k"></span>\
+            <span class="model-code-5l"></span>\
+            <span class="model-code-5m"></span>\
+            <span class="model-code-5n"></span>\
+            <span class="model-code-5o"></span>\
+            <span class="model-code-5p"></span>\
+            <span class="model-code-5q"></span>\
+            <span class="model-code-5r"></span>\
+            ' ).insertAfter( ".model-code-5f" );
+    }
+
+    // preload images for this scene
     function preloadImages(key,value) {
-        console.log(key + ':' + '../' + value.img);
+        //console.log(key + ':' + '../' + value.img);
         images[key] = new Image();
         images[key].src = '../' + value.img;
     }
@@ -562,117 +615,461 @@ $(function() {
         // TOP POWER OPTIONS
         // * * * * * * * * * *
 
+            // all other tables
             $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
-                // do something...
                 //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
-                //printObject(event)
-                //alert($('#top-outlet-type').val() + " : " + newValue);
-                //alert("clicked: " + clickedIndex + " : " + newValue);
 
-                if( clickedIndex == '0' ){
-                    var layer = '5a'; // hardcode layer number
-                    // show top left
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        numberOfOutlets = numberOfOutlets - 1;
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PCL_SP.png";
-                        var model_code = '[PbL]';
-                        numberOfOutlets = numberOfOutlets + 1;
-                        //alert('add image ' + imageURL)
-                    }
-                    
-                    
-                    // update model info
-                    var item_type = 'Power Top';
-   
 
-                } else if ( clickedIndex == '1' ){
-                    var layer = '5b'; // hardcode layer number
-                    // show top middle
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        numberOfOutlets = numberOfOutlets - 1;
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PAL_SP.png";
-                        var model_code = '[PaL]';
-                        numberOfOutlets = numberOfOutlets + 1;
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    
+                 if( tableType == 'Multi Heights' ) {
+                        // multi heights table
 
-                } else if ( clickedIndex == '2' ){
-                    var layer = '5c'; // hardcode layer number
-                    // show top right
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        numberOfOutlets = numberOfOutlets - 1;
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PBL_SP.png";
-                        var model_code = '[PcL]';
-                        numberOfOutlets = numberOfOutlets + 1;
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    
-                } else if ( clickedIndex == '3' ){
-                    var layer = '5d'; // hardcode layer number
-                    // show top right
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        numberOfOutlets = numberOfOutlets - 1;
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PDL_SP.png";
-                        var model_code = '[PdL]';
-                        numberOfOutlets = numberOfOutlets + 1;
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    
-                } else if ( clickedIndex == '4' ){
-                    var layer = '5e'; // hardcode layer number
-                    // show top right
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        numberOfOutlets = numberOfOutlets - 1;
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PEL_SP.png";
-                        var model_code = '[PeL]';
-                        numberOfOutlets = numberOfOutlets + 1;
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    
-                } else if ( clickedIndex == '5' ){
-                    var layer = '5f'; // hardcode layer number
-                    // show top right
-                    if( newValue == false ){
-                        var imageURL = "";
-                        var model_code = "";
-                        numberOfOutlets = numberOfOutlets - 1;
-                        //alert('remove image');
-                    }else {
-                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PFL_SP.png";
-                        var model_code = '[PfL]';
-                        numberOfOutlets = numberOfOutlets + 1;
-                        //alert('add image ' + imageURL)
-                    }
-                    var item_type = 'Power Top';
-                    
-                }
-            
+                        if( clickedIndex == '0' ){
+                            var layer = '5a'; // hardcode layer number
+                            // show top left
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-29-PBL_SP.png";
+                                var model_code = '[PbL29]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+                        
+                            // update model info
+                            var item_type = 'Power Top';
+       
 
+                        } else if ( clickedIndex == '1' ){
+
+                            var layer = '5b'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-29-PAL_SP.png";
+                                var model_code = '[PaL29]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        } else if ( clickedIndex == '2' ){
+
+                            var layer = '5c'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-29-PCL_SP.png";
+                                var model_code = '[PcL29]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                            }
+                                // update model info
+                                var item_type = 'Power Top';
+
+
+
+                        } else if( clickedIndex == '3' ){
+                            var layer = '5d'; // hardcode layer number
+                            // show top left
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-29-PDL_SP.png";
+                                var model_code = '[PdL29]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+                        
+                            // update model info
+                            var item_type = 'Power Top';
+       
+
+                        } else if ( clickedIndex == '4' ){
+
+                            var layer = '5e'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-29-PEL_SP.png";
+                                var model_code = '[PeL29]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        } else if ( clickedIndex == '5' ){
+
+                            var layer = '5f'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-29-PFL_SP.png";
+                                var model_code = '[PfL29]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                            }
+                                // update model info
+                                var item_type = 'Power Top';
+
+                         
+                        // 36
+                         }else if( clickedIndex == '6' ){
+                            var layer = '5g'; // hardcode layer number
+                            // show top left
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-36-PAL_SP.png";
+                                var model_code = '[PaL36]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+                        
+                            // update model info
+                            var item_type = 'Power Top';
+       
+
+                        } else if ( clickedIndex == '7' ){
+
+                            var layer = '5h'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-36-PBL_SP.png";
+                                var model_code = '[PbL36]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        } else if ( clickedIndex == '8' ){
+
+                            var layer = '5i'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-36-PCL_SP.png";
+                                var model_code = '[PcL36]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                            }
+                                // update model info
+                                var item_type = 'Power Top';
+
+
+
+                        } else if( clickedIndex == '9' ){
+                            var layer = '5j'; // hardcode layer number
+                            // show top left
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-36-PDL_SP.png";
+                                var model_code = '[PdL36]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+                        
+                            // update model info
+                            var item_type = 'Power Top';
+       
+
+                        } else if ( clickedIndex == '10' ){
+
+                            var layer = '5k'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-36-PEL_SP.png";
+                                var model_code = '[PeL36]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        } else if ( clickedIndex == '11' ){
+
+                            var layer = '5l'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-36-PFL_SP.png";
+                                var model_code = '[PfL36]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                            }
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        
+                        
+
+
+
+
+                         
+                        // 36
+                         }else if( clickedIndex == '12' ){
+                            var layer = '5m'; // hardcode layer number
+                            // show top left
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-42-PAL_SP.png";
+                                var model_code = '[PaL42]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+                        
+                            // update model info
+                            var item_type = 'Power Top';
+       
+
+                        } else if ( clickedIndex == '13' ){
+
+                            var layer = '5n'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-42-PBL_SP.png";
+                                var model_code = '[PbL42]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        } else if ( clickedIndex == '14' ){
+
+                            var layer = '5o'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-42-PCL_SP.png";
+                                var model_code = '[PcL42]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                            }
+                                // update model info
+                                var item_type = 'Power Top';
+
+
+
+                        } else if( clickedIndex == '15' ){
+                            var layer = '5p'; // hardcode layer number
+                            // show top left
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-42-PDL_SP.png";
+                                var model_code = '[PdL42]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+                        
+                            // update model info
+                            var item_type = 'Power Top';
+       
+
+                        } else if ( clickedIndex == '16' ){
+
+                            var layer = '5q'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-42-PEL_SP.png";
+                                var model_code = '[PeL42]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                                //alert('add image ' + imageURL)
+                            }
+
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        } else if ( clickedIndex == '17' ){
+
+                            var layer = '5r'; // hardcode layer number
+                            if( newValue == false ){
+                                var imageURL = "";
+                                var model_code = "";
+                                numberOfOutlets = numberOfOutlets - 1;
+                                //alert('remove image');
+                            }else {
+                                var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-42-PFL_SP.png";
+                                var model_code = '[PfL42]';
+                                numberOfOutlets = numberOfOutlets + 1;
+                            }
+                                // update model info
+                                var item_type = 'Power Top';
+
+                        }
+
+
+
+                }else{
+
+
+                    // is not tableType multi heights
+
+                    if( clickedIndex == '0' ){
+                        var layer = '5a'; // hardcode layer number
+                        // show top left
+                        if( newValue == false ){
+                            var imageURL = "";
+                            var model_code = "";
+                            numberOfOutlets = numberOfOutlets - 1;
+                        }else {
+                            var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PCL_SP.png";
+                            var model_code = '[PbL]';
+                            numberOfOutlets = numberOfOutlets + 1;
+                            //alert('add image ' + imageURL)
+                        }
+                        
+                        
+                        // update model info
+                        var item_type = 'Power Top';
+       
+
+                    } else if ( clickedIndex == '1' ){
+                        var layer = '5b'; // hardcode layer number
+                        // show top middle
+                        if( newValue == false ){
+                            var imageURL = "";
+                            var model_code = "";
+                            numberOfOutlets = numberOfOutlets - 1;
+                            //alert('remove image');
+                        }else {
+                            var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PAL_SP.png";
+                            var model_code = '[PaL]';
+                            numberOfOutlets = numberOfOutlets + 1;
+                            //alert('add image ' + imageURL)
+                        }
+                        var item_type = 'Power Top';
+                        
+
+                    } else if ( clickedIndex == '2' ){
+                        var layer = '5c'; // hardcode layer number
+                        // show top right
+                        if( newValue == false ){
+                            var imageURL = "";
+                            var model_code = "";
+                            numberOfOutlets = numberOfOutlets - 1;
+                            //alert('remove image');
+                        }else {
+                            var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PBL_SP.png";
+                            var model_code = '[PcL]';
+                            numberOfOutlets = numberOfOutlets + 1;
+                            //alert('add image ' + imageURL)
+                        }
+                        var item_type = 'Power Top';
+                        
+                    } else if ( clickedIndex == '3' ){
+                        var layer = '5d'; // hardcode layer number
+                        // show top right
+                        if( newValue == false ){
+                            var imageURL = "";
+                            var model_code = "";
+                            numberOfOutlets = numberOfOutlets - 1;
+                            //alert('remove image');
+                        }else {
+                            var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PDL_SP.png";
+                            var model_code = '[PdL]';
+                            numberOfOutlets = numberOfOutlets + 1;
+                            //alert('add image ' + imageURL)
+                        }
+                        var item_type = 'Power Top';
+                        
+                    } else if ( clickedIndex == '4' ){
+                        var layer = '5e'; // hardcode layer number
+                        // show top right
+                        if( newValue == false ){
+                            var imageURL = "";
+                            var model_code = "";
+                            numberOfOutlets = numberOfOutlets - 1;
+                            //alert('remove image');
+                        }else {
+                            var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PEL_SP.png";
+                            var model_code = '[PeL]';
+                            numberOfOutlets = numberOfOutlets + 1;
+                            //alert('add image ' + imageURL)
+                        }
+                        var item_type = 'Power Top';
+                        
+                    } else if ( clickedIndex == '5' ){
+                        var layer = '5f'; // hardcode layer number
+                        // show top right
+                        if( newValue == false ){
+                            var imageURL = "";
+                            var model_code = "";
+                            numberOfOutlets = numberOfOutlets - 1;
+                            //alert('remove image');
+                        }else {
+                            var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-PFL_SP.png";
+                            var model_code = '[PfL]';
+                            numberOfOutlets = numberOfOutlets + 1;
+                            //alert('add image ' + imageURL)
+                        }
+                        var item_type = 'Power Top';
+                        
+                    }
+                } // end if tableType
+
+                
                 // UPDATE SCREEN
 
                 if( numberOfOutlets > 0 ) {
@@ -689,7 +1086,6 @@ $(function() {
                 $("#model-code").fadeIn();
 
             });
-
 
         // * * * * * * * * * *
         // * * * * * * * * * *
@@ -789,7 +1185,7 @@ $(function() {
         $("#table-height").append('<option value="' + tableHeights[i] + '">' + tableHeights[i] +'"</option>');
     }
 
-    for ( i = 0; i < 10; i++) {
+    for ( i = 0; i < 18; i++) {
         $("#outlet-count").append('<option value="' + i + '">' + i +'</option>');
     }
 
