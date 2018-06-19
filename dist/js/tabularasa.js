@@ -1524,7 +1524,7 @@ $(window).on('load', function(){
     
     setTimeout(function(){
         $('#loading').hide();
-    }, 4000);
+    }, 2000);
 
     // preload images for this scene
     
