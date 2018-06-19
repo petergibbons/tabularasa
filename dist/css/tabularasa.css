@@ -544,3 +544,13 @@ table.dataTable thead .sorting:after {
             left: 240px;
             z-index: 100;
           }
+          #loading-image-text {
+            position: absolute;
+            top: 500px;
+            left: 440px;
+            z-index: 100;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #555;
+            font-weight: 400;
+          }
