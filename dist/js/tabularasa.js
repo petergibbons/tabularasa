@@ -1518,9 +1518,13 @@ $(function() {
 });
 
 
-// preload images after initial paint
-// 
 $(window).on('load', function(){
+
+    // hide loading gif
+    
+    setTimeout(function(){
+        $('#loading').hide();
+    }, 4000);
 
     // preload images for this scene
     
@@ -1528,9 +1532,12 @@ $(window).on('load', function(){
         //console.log(key + ':' + '../' + value.img);
         images[key] = new Image();
         images[key].src = value.img;
+
     }
 
     Object.entries(data).forEach(
         ([key, value]) => preloadImages(key,value)
     );
+
+
 });
