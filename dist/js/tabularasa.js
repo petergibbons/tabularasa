@@ -483,7 +483,7 @@ $(function() {
     function preloadImages(key,value) {
         //console.log(key + ':' + '../' + value.img);
         images[key] = new Image();
-        images[key].src = '../' + value.img;
+        images[key].src = value.img;
     }
 
     Object.entries(data).forEach(
