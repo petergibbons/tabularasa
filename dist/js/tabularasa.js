@@ -1520,7 +1520,7 @@ $(function() {
 
 // preload images after initial paint
 // 
-$(window).load( function(){
+$(window).on('load', function(){
 
     // preload images for this scene
     
