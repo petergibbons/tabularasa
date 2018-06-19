@@ -50,7 +50,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
 
 }else if( getUrlParameter('t') == "foot-rails" ){
 
-    var tableType = "Foot Rails";
+    var tableType = "Footrails";
     var folderUrl = "Scene04_FootRails";
     var fileUrl = "Scene04FootRails";
 
