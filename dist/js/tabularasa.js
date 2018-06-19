@@ -407,6 +407,7 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
     var firstRun = true;
     var images = new Array();
 
+// document ready
 $(function() {
 
     if( tableType == "Multi Heights" ){
@@ -1471,24 +1472,7 @@ $(function() {
         });
 
 
-      
-
-
-    // preload images for this scene
-    
-    function preloadImages(key,value) {
-        //console.log(key + ':' + '../' + value.img);
-        images[key] = new Image();
-        images[key].src = value.img;
-    }
-
-    Object.entries(data).forEach(
-        ([key, value]) => preloadImages(key,value)
-    );
-
-
-
-
+    =
 
 
         // * * * * * * * * * *
@@ -1531,4 +1515,22 @@ $(function() {
     );
  */
    
+});
+
+
+// preload images after initial paint
+// 
+$(window).load( function(){
+
+    // preload images for this scene
+    
+    function preloadImages(key,value) {
+        //console.log(key + ':' + '../' + value.img);
+        images[key] = new Image();
+        images[key].src = value.img;
+    }
+
+    Object.entries(data).forEach(
+        ([key, value]) => preloadImages(key,value)
+    );
 });
