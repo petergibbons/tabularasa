@@ -462,7 +462,22 @@ $(function() {
             <span class="model-code-5q"></span>\
             <span class="model-code-5r"></span>\
             ' ).insertAfter( ".model-code-5f" );
-    }
+    }// multi-heights
+
+    if( tableType == "Cubby" ){
+
+        // add prod layer
+        $("#prod").append('<img id="prod-image-product_option6cubby" style="z-index:1;" class="img-responsive product-option product-option-power">');
+        // add cubby option to side
+        $("#base-outlet-type").append('<option data-content="<img src=\'dist/img/thumbs/ECA-cubby.jpg\' class=\'img-responsive\'>" title="CUBBY">CUBBY</option>');
+        //Scene03Cubby_ECA_ECA-CUB_SP
+        //add model code layer
+         $( '<span class="model-code-6cubby"></span>\
+            ' ).insertAfter( ".model-code-6c" );
+
+
+    }// cubby
+
 
     // preload images for this scene
     function preloadImages(key,value) {
@@ -1149,7 +1164,24 @@ $(function() {
                         //alert('add image ' + imageURL)
                     }
 
+                } else if ( clickedIndex == '3' ){ // cubby
+                    var layer = '6cubby'; // hardcode layer number
+                    // show top right
+                    if( newValue == false ){
+                        var imageURL = "";
+                        var model_code = "";
+                        var item_type = "";
+                        numberOfOutlets = numberOfOutlets - 1;
+                        //alert('remove image');
+                    } else {
+                        var imageURL = "dist/img/" + folderUrl + "/ECA/" + fileUrl + "_ECA_ECA-CUB_SP.png";
+                        var model_code = '[CUB]';
+                        numberOfOutlets = numberOfOutlets + 1;
+                        //alert('add image ' + imageURL)
+                    }
+
                 }
+
 
 
                 // UPDATE SCREEN
@@ -1276,8 +1308,7 @@ $(function() {
             accent_laminate,
             bracket,
             outlets,
-            size,
-            model_code
+            size
         ];
 
         // remove whitespace from pdf text
@@ -1308,9 +1339,13 @@ $(function() {
                     doc.text(tableType, 16, 510);
 
                 doc.setTextColor(136,136,136);
+                //doc.setFontSize(13);
+
+                //var splitTitle = doc.splitTextToSize(model_code, 100);
+                //doc.text(model_code, 15, 540);
                 doc.setFontSize(16);
-                    doc.text(cleanPdfText, 16, 540);
-                
+                doc.text(cleanPdfText, 16, 540);
+
                 doc.save('Hi5_Spec_Sheet.pdf');
             }
         });
