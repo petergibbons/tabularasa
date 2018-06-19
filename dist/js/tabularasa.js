@@ -407,6 +407,20 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
     var firstRun = true;
     var images = new Array();
 
+
+    // preload images for this scene
+    // don't wait for page load
+    // do on window.load();
+    function preloadImages(key,value) {
+        //console.log(key + ':' + '../' + value.img);
+        images[key] = new Image();
+        images[key].src = value.img;
+    }
+
+    Object.entries(data).forEach(
+        ([key, value]) => preloadImages(key,value)
+    );
+
 $(function() {
 
     if( tableType == "Multi Heights" ){
@@ -470,26 +484,11 @@ $(function() {
         $("#prod").append('<img id="prod-image-product_option6cubby" style="z-index:1;" class="img-responsive product-option product-option-power">');
         // add cubby option to side
         $("#base-outlet-type").append('<option data-content="<img src=\'dist/img/thumbs/ECA-cubby.jpg\' class=\'img-responsive\'>" title="CUBBY">CUBBY</option>');
-        //Scene03Cubby_ECA_ECA-CUB_SP
         //add model code layer
-         $( '<span class="model-code-6cubby"></span>\
-            ' ).insertAfter( ".model-code-6c" );
+         $('<span class="model-code-6cubby"></span>').insertAfter( ".model-code-6c" );
 
 
     }// cubby
-
-
-    // preload images for this scene
-    function preloadImages(key,value) {
-        //console.log(key + ':' + '../' + value.img);
-        images[key] = new Image();
-        images[key].src = value.img;
-    }
-
-    Object.entries(data).forEach(
-        ([key, value]) => preloadImages(key,value)
-    );
-
 
     // * * * * * * * * * *
     // table model chooser dropdown
