@@ -1363,7 +1363,7 @@ $(function() {
         var newSrc = $(this).val();
         var image = $('#outlet-type-image');
         image.fadeOut('fast', function(){
-            image.attr('src', '../dist/img/thumbs/Hi5_PowerBoxes_' + newSrc + '.jpg');
+            image.attr('src', 'dist/img/thumbs/Hi5_PowerBoxes_' + newSrc + '.jpg');
             image.fadeIn('fast');
         });
       
