@@ -1415,7 +1415,7 @@ $(function() {
                 //form.submit();
                 
                 // gather details to email to user and admin
-                var adminEmail = "bristond@gmail.com";
+                var adminEmail = "tracy.spainhour@trinityanimation.com";
                 var clientEmail = $('[name="Email"]').val()
                 var clientName = $('[name="Name"]').val();
                 var clientEmailText = "Thanks for your interest in Hi5.  All quotes are emailed within 24-48 hours.  To contact customer service, please call (816) 774-4050.<br>";
