@@ -1,5 +1,5 @@
 jQuery('#quote-form-wrapper').append('<form id="quote" method="get" action="">\
-        <input type="hidden" name="Table_Type" value="Coby Hybrid" />\
+        <input type="hidden" name="Table_Type" value="' + tableType + '" />\
     <div id="order-details" style="display:none;">\
         <div>\
             <button id="edit-config" class="btn btn-small btn-success"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit Table Configuration</button>\
