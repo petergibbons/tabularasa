@@ -32,22 +32,19 @@
 
 <body>
     <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="dropdown table-chooser-wrapper">
 
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="dropdown table-chooser-wrapper">
-
-                    <button class="btn btn-default dropdown-toggle" type="button" id="table-chooser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        Hi5 TABLES
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu table-chooser-menu" aria-labelledby="table-chooser"></ul>
-                </div><!-- /.dropdown -->
-            </nav>
-
+                <button class="btn btn-default dropdown-toggle" type="button" id="table-chooser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Hi5 TABLES
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu table-chooser-menu" aria-labelledby="table-chooser"></ul>
+            </div><!-- /.dropdown -->
+        </nav>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-8 prod-wrapper">
-
                     <div id="prod">
                         <img id="prod-image-product_option_bg" style="z-index:0;" class="img-responsive bg" />
                         <img id="prod-image-product_option1" style="z-index:1;" class="img-responsive product-option" /><!-- tabletop -->
@@ -65,7 +62,6 @@
                         <img id="prod-image-product_option6b" style="z-index:1;" class="img-responsive product-option" /><!-- side power options -->
                         <img id="prod-image-product_option6c" style="z-index:1;" class="img-responsive product-option" /><!-- side power options -->
                     </div><!-- #prod -->
-
                     <div id="model-code" style="display: none;">
                         <strong>Model Code: </strong>
                         <span class="model-code-1"></span>
@@ -82,10 +78,8 @@
                         <span class="model-code-6b"></span>
                         <span class="model-code-6c"></span>
                     </div>
-                
                 </div>
                 <div class="col-lg-4 align-left no-gutters" id="sidebar">
-                    
                     <div id="quote-form-wrapper"></div>
                     <div id="order-details-thanks" class="" style="display:none;">
                         <h3>Thanks for your interest.</h3>
@@ -93,22 +87,19 @@
                         <p><a href=''>Configure another table</a></p>
                         <p><a href='#' id='download-spec'>Download PDF spec sheet</a></p>
                     </div>
-
                     <div id="editor"></div>
-
                     <div class="options row" id="options-wrapper">
                         <h3><span class="table-name-text"></span></h3>
-                        
                     </div><!-- .options -->
                 </div><!-- /.col-lg-3 -->
             </div>
-            
         </div><!-- /#page-wrapper -->
-
     </div><!-- /#wrapper -->
-    <div id="loading">
-        <img id="loading-image" src="dist/img/loading.gif" alt="Loading..." /><br>
-        <span id="loading-image-text"></span>
+    <div id="loading-wrapper">
+        <div id="loading">
+            <img id="loading-image" src="dist/img/loading.gif" alt="Loading..." /><br>
+            <span id="loading-image-text"></span>
+        </div>
     </div>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
