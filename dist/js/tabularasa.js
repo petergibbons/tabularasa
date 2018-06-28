@@ -98,7 +98,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
 } //end if url parameter check
 
 // set default product images
-$('#prod-image-product_option_bg').attr('src', "dist/img/" + folderUrl + "/BACKPLATE/" + folderUrl + "_Backplate_02.png");
+$('#prod-image-product_option_bg').attr('src', "dist/img/" + folderUrl + "/BACKPLATE/" + folderUrl + "_Backplate_02.jpg");
 $('#prod-image-product_option1').attr('src', "dist/img/" + folderUrl + "/DEFAULT/" + folderUrl + "_Laminate_Grey_01.png");
 $('#prod-image-product_option2').attr('src', "dist/img/" + folderUrl + "/DEFAULT/" + folderUrl + "_Edge_Grey_01.png");
 $('#prod-image-product_option3').attr('src', "dist/img/" + folderUrl + "/DEFAULT/" + folderUrl + "_Accent_Grey_01.png");
@@ -1532,9 +1532,9 @@ $(window).on('load', function(){
 
     // hide loading gif
     
-    // setTimeout(function(){
-    //     $('#loading').fadeOut('fast');
-    // }, 4000);
+    setTimeout(function(){
+        $('#loading-wrapper').fadeOut('fast');
+    }, 4000);
 
     setTimeout(function(){
         $('#loading-image-text').text('Loading Laminate Options...');
@@ -1554,12 +1554,23 @@ $(window).on('load', function(){
         //console.log(key + ':' + '../' + value.img);
         images[key] = new Image();
         images[key].src = value.img;
-
     }
 
-    Object.entries(data).forEach(
-        ([key, value]) => preloadImages(key,value)
-    );
+    // ie11 can't use es6!!
+    // Object.entries(data).forEach(
+    //    // ([key, value]) => preloadImages(key,value)
+    // );
+
+    // ES5 fallback for ie11
+    var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+    Object.entries(data).forEach(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            key = _ref2[0],
+            value = _ref2[1];
+
+        return preloadImages(key, value);
+    });
 
 
 });

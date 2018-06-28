@@ -1,7 +1,7 @@
 jQuery('#options-wrapper').append('<div class="btn-group laminate col-xs-12 col-sm-4 col-md-4 col-lg-6">\
     <h3>Tabletop Laminate</h3>\
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_1">\
-      <img src="//via.placeholder.com/25/cccccc/fffffff?text=?">\
+      <img src="dist/img/no-option.png">\
         <span class="text">Tabletop Color</span>\
       <span class="glyphicon glyphicon-chevron-down"></span>\
     </button>\
@@ -364,7 +364,7 @@ jQuery('#options-wrapper').append('<div class="btn-group laminate col-xs-12 col-
     <div class="btn-group laminate-edge col-xs-12 col-sm-4 col-md-4 col-lg-6">\
     <h3>Edge Laminate</h3>\
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_2">\
-      <img src="//via.placeholder.com/25/cccccc/fffffff?text=?">\
+      <img src="dist/img/no-option.png">\
         <span class="text">Edge Color</span>\
       <span class="glyphicon glyphicon-chevron-down"></span>\
     </button>\
@@ -727,7 +727,7 @@ jQuery('#options-wrapper').append('<div class="btn-group laminate col-xs-12 col-
     <div class="btn-group laminate-accent col-xs-12 col-sm-4 col-md-4 col-lg-6">\
     <h3>Accent Laminate</h3>\
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_3">\
-      <img src="//via.placeholder.com/25/cccccc/fffffff?text=?">\
+      <img src="dist/img/no-option.png">\
         <span class="text">Accent Color</span>\
       <span class="glyphicon glyphicon-chevron-down"></span>\
     </button>\
@@ -1090,7 +1090,7 @@ jQuery('#options-wrapper').append('<div class="btn-group laminate col-xs-12 col-
     <div class="btn-group hardware col-xs-12 col-sm-4 col-md-4 col-lg-6">\
     <h3>Bracket Color</h3>\
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selected_4">\
-      <img src="//via.placeholder.com/25/cccccc/fffffff?text=?">\
+      <img src="dist/img/no-option.png">\
         <span class="text">Bracket Color</span>\
       <span class="glyphicon glyphicon-chevron-down"></span>\
     </button>\
