@@ -419,6 +419,15 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
 // document ready
 $(function() {
 
+    // add no-gutter class if smaller than 768px
+    $(window).resize(function() {
+        if ($(window).width() < 768) {
+            alert('Less than 768');
+        }else {
+            alert('More than 768');
+        }
+    });
+
     if( tableType == "Multi Heights" ){
 
         // add extra ECA layers
@@ -1079,12 +1088,10 @@ $(function() {
                     }
                 } // end if tableType
 
-                
                 // UPDATE SCREEN
-
                 if( numberOfOutlets > 0 ) {
                     $('#outlet-count option[value=' + numberOfOutlets + ']').attr('selected','selected'); // set number on customer form
-                    $("#power-boxes, .power-box-options").fadeIn(); // fade in outlet options on customer form
+                    $("#power-boxes, #outlet-type-options").fadeIn(); // fade in outlet options on customer form
                 }
                 // change product image
                 $('#prod-image-product_option'+layer).fadeOut(150, function() {

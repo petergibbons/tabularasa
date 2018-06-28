@@ -120,10 +120,10 @@ jQuery('#quote-form-wrapper').append('<form id="quote" method="get" action="">\
                 </div>\
             </div>\
             <div class="col-lg-6 col-xs-6">\
-                    <img src="dist/img/thumbs/Hi5_PowerBoxes_Cove.jpg" id="outlet-type-image" class="img-responsive" />\
+                <img src="dist/img/thumbs/Hi5_PowerBoxes_Cove.jpg" id="outlet-type-image" class="img-responsive" />\
             </div>\
         </div>\
-        <div class="row" class="power-box-options" style="display:none;">\
+        <div class="row" id="outlet-type-options" class="power-box-options" style="display:none;">\
             <div class="col-lg-6">\
                 <h3>Power Box Options</h3>\
                 <p>Do you require AV/IT jacks in Power Box (VGA, HTML,Data Jacks)? </p>\
