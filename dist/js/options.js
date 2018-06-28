@@ -1244,7 +1244,7 @@ jQuery('#options-wrapper').append('<div class="btn-group laminate col-xs-12 col-
     </div>\
     <div class="power-options btn-group outlet col-xs-12 col-sm-4 col-md-4 col-lg-6" data-show-tick="glyphicon-chevron-down">\
     <h3>Table Top Power</h3>\
-    <select class="selectpicker" id="top-outlet-type" multiple title="Table Top Outlets" data-width="auto" data-size="6" data-selected-text-format="count">\
+    <select class="selectpicker" id="top-outlet-type" multiple title="Table Top Outlets" data-width="auto" data-selected-text-format="count">\
         <option data-content="<img src=\'dist/img/thumbs/pbl.jpg\' class=\'img-responsive\'>" title="PbL">PbL</option>\
         <option data-content="<img src=\'dist/img/thumbs/pal.jpg\' class=\'img-responsive\'>" title="PaL">PaL</option>\
         <option data-content="<img src=\'dist/img/thumbs/pcl.jpg\' class=\'img-responsive\'>" title="PcL">PcL</option>\

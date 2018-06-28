@@ -34,6 +34,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Coby Hybrid";
     var folderUrl = "Scene02_CobyHybrid";
     var fileUrl = "Scene02CobyHybrid";
+    var tableTypeModelCode = "UN2L RES.L8-CYSQ";
     $('.power-options-base').hide();
 
 }else if( getUrlParameter('t') == "casters" ){
@@ -41,48 +42,56 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Casters";
     var folderUrl = "Scene01_Casters";
     var fileUrl = "Scene01Casters";
+    var tableTypeModelCode = "UN2L RES.L8-CS";
 
 }else if( getUrlParameter('t') == "cubby" ){
 
     var tableType = "Cubby";
     var folderUrl = "Scene03_Cubby";
     var fileUrl = "Scene03Cubby";
+    var tableTypeModelCode = "";
 
 }else if( getUrlParameter('t') == "foot-rails" ){
 
     var tableType = "Footrails";
     var folderUrl = "Scene04_FootRails";
     var fileUrl = "Scene04FootRails";
+    var tableTypeModelCode = "UN2L RES.L8-FT";
 
 }else if( getUrlParameter('t') == "full-modesty" ){
 
     var tableType = "Full Modesty";
     var folderUrl = "Scene05_FullModesty";
     var fileUrl = "Scene05FullModesty";
+    var tableTypeModelCode = "UN2L RES.L8-FMP";
 
 }else if( getUrlParameter('t') == "half-modesty" ){
 
     var tableType = "Half Modesty";
     var folderUrl = "Scene06_HalfModesty";
     var fileUrl = "Scene06HalfModesty";
+    var tableTypeModelCode = "UN2L RES.L8-HMP";
 
 }else if( getUrlParameter('t') == "multi-heights" ){
 
     var tableType = "Multi Heights";
     var folderUrl = "Scene07_MultiHeights";
     var fileUrl = "Scene07MultiHeights";
+    var tableTypeModelCode = "UN2L RES.L8";
 
 }else if( getUrlParameter('t') == "no-hardware" ){
 
     var tableType = "No Hardware";
     var folderUrl = "Scene08_NoHardware";
     var fileUrl = "Scene08NoHardware";
+    var tableTypeModelCode = "UN2L RES.L8";
 
 }else{
 
     var tableType = "Casters";
     var folderUrl = "Scene01_Casters";
     var fileUrl = "Scene01Casters";
+    var tableTypeModelCode = "UN2 RES.L8-CS";
 
     window.location.search += "t=casters"
 
@@ -429,24 +438,24 @@ $(function() {
         // add extra options to options dropdown
         // *************
 
-        $("#top-outlet-type").html('<option data-content="<img src=\'dist/img/thumbs/ECA-PBL-29.png\' class=\'img-responsive\'>" title="PbL29">PbL 29</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PAL-29.png\' class=\'img-responsive\'>" title="PaL29">PaL 29</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PCL-29.png\' class=\'img-responsive\'>" title="PcL29">PcL 29</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PDL-29.png\' class=\'img-responsive\'>" title="PdL29">PdL 29</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PEL-29.png\' class=\'img-responsive\'>" title="PeL29">PeL 29</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PFL-29.png\' class=\'img-responsive\'>" title="PfL29">PfL 29</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PBL-36.png\' class=\'img-responsive\'>" title="PbL36">PbL 36</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PAL-36.png\' class=\'img-responsive\'>" title="PaL36">PaL 36</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PCL-36.png\' class=\'img-responsive\'>" title="PcL36">PcL 36</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PDL-36.png\' class=\'img-responsive\'>" title="PdL36">PdL 36</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PEL-36.png\' class=\'img-responsive\'>" title="PeL36">PeL 36</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PFL-36.png\' class=\'img-responsive\'>" title="PfL36">PfL 36</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PBL-42.png\' class=\'img-responsive\'>" title="PbL42">PbL 42</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PAL-42.png\' class=\'img-responsive\'>" title="PaL42">PaL 42</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PCL-42.png\' class=\'img-responsive\'>" title="PcL42">PcL 42</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PDL-42.png\' class=\'img-responsive\'>" title="PdL42">PdL 42</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PEL-42.png\' class=\'img-responsive\'>" title="PeL42">PeL 42</option>\
-        <option data-content="<img src=\'dist/img/thumbs/ECA-PFL-42.png\' class=\'img-responsive\'>" title="PfL42">PfL 42</option>\
+        $("#top-outlet-type").html('<option data-content="<img src=\'dist/img/thumbs/pbs-29.jpg\' class=\'img-responsive\'>" title="PbL29">PbL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pal-29.jpg\' class=\'img-responsive\'>" title="PaL29">PaL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pcl-29.jpg\' class=\'img-responsive\'>" title="PcL29">PcL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pdl-29.jpg\' class=\'img-responsive\'>" title="PdL29">PdL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pel-29.jpg\' class=\'img-responsive\'>" title="PeL29">PeL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pfl-29.jpg\' class=\'img-responsive\'>" title="PfL29">PfL 29</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pbl-36.jpg\' class=\'img-responsive\'>" title="PbL36">PbL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pal-36.jpg\' class=\'img-responsive\'>" title="PaL36">PaL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pcl-36.jpg\' class=\'img-responsive\'>" title="PcL36">PcL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pdl-36.jpg\' class=\'img-responsive\'>" title="PdL36">PdL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pel-36.jpg\' class=\'img-responsive\'>" title="PeL36">PeL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pfl-36.jpg\' class=\'img-responsive\'>" title="PfL36">PfL 36</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pbl-42.jpg\' class=\'img-responsive\'>" title="PbL42">PbL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pal-42.jpg\' class=\'img-responsive\'>" title="PaL42">PaL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pcl-42.jpg\' class=\'img-responsive\'>" title="PcL42">PcL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pdl-42.jpg\' class=\'img-responsive\'>" title="PdL42">PdL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pel-42.jpg\' class=\'img-responsive\'>" title="PeL42">PeL 42</option>\
+        <option data-content="<img src=\'dist/img/thumbs/pfl-42.jpg\' class=\'img-responsive\'>" title="PfL42">PfL 42</option>\
         ');
 
         // add model code layers
@@ -506,6 +515,10 @@ $(function() {
     $(".table-chooser-menu").append('<li><a href="?t=no-hardware">No Hardware</a></li>');
     $("#table-chooser").css('text-transform','none');
 
+    // update model code v2
+    $(".model-code-1").html( "[" + tableTypeModelCode + "]");
+    $("#model-code").fadeIn();
+
     // * * * * * * * * * *
     // main product options
     // * * * * * * * * * *
@@ -541,16 +554,15 @@ $(function() {
         //$("#pdf_option_" + layer).html( item_type + ": " + data[value].label);
 
         // update model info
-        $(".model-code-" + layer).html( "[" + data[value].model_code + "]");
-        // create global function to accept both power and table options
-        $("#model-code").fadeIn();
+        //$(".model-code-" + layer).html( "[" + data[value].model_code + "]");
+        
+        
+//        $("#model-code").fadeIn();
 
         // if first run && type is laminate
         // auto select edge to match 
         if( firstRun === true && item_type == "Laminate" ) { 
                 
-                //var edgeThumb = "";
-
                 var edgeImage = data[value].img;
                 edgeImage = edgeImage.replace( '_Laminate_', '_Edge_' );
                 edgeImage = edgeImage.replace( 'Laminate', 'Edge' );
@@ -572,9 +584,9 @@ $(function() {
                 //$("#pdf_option_2").html( item_type + ": " + data[value].label);
 
                 // update model info
-                $(".model-code-2").html( "[" + data[value].model_code + "]");
+                //$(".model-code-2").html( "[" + data[value].model_code + "]");
                 // create global function to accept both power and table options
-                $("#model-code").fadeIn();
+                //$("#model-code").fadeIn();
                 
                 // only fire once?
                 //$("#finish_name_2").val() == data[value].label
@@ -592,7 +604,6 @@ $(function() {
                 // enable get quote button
                 $("#buy").attr("disabled", false); 
             }
-
 
         e.preventDefault();
     });
@@ -1083,8 +1094,8 @@ $(function() {
                 });
 
                 // update model code
-                $(".model-code-" + layer).html( model_code );
-                $("#model-code").fadeIn();
+                //$(".model-code-" + layer).html( model_code );
+                //$("#model-code").fadeIn();
 
             });
 
@@ -1178,8 +1189,8 @@ $(function() {
                 });
 
                 // update model code
-                $(".model-code-" + layer).html( model_code );
-                $("#model-code").fadeIn();
+                // $(".model-code-" + layer).html( model_code );
+                // $("#model-code").fadeIn();
 
             });
 
@@ -1435,7 +1446,7 @@ $(function() {
                     }
                     
                 });
-                    adminEmailText += "Model Code: " + getModelCode();
+                    adminEmailText += "Model Code: " + tableTypeModelCode;
                     
                     /*
                      * Uses smtp.js and sendInBlue transaction email service
