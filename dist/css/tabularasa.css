@@ -13,7 +13,7 @@ button, input{
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-#display-none { display:none; }
+.display-none { display:none; }
 #wrapper {
   width: 100%;
 }
