@@ -77,7 +77,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Multi Heights";
     var folderUrl = "Scene07_MultiHeights";
     var fileUrl = "Scene07MultiHeights";
-    var tableTypeModelCode = "UN2L LxWxH RES.L8";
+    var tableTypeModelCode = "UN2L LxWxH LxWxH LxWxH RES.L8";
 
 }else if( getUrlParameter('t') == "no-hardware" ){
 
@@ -91,7 +91,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Casters";
     var folderUrl = "Scene01_Casters";
     var fileUrl = "Scene01Casters";
-    var tableTypeModelCode = "UN2 LxWxH LxWxH LxWxH RES.L8-CS";
+    var tableTypeModelCode = "UN2 LxWxH RES.L8-CS";
 
     window.location.search += "t=casters"
 
