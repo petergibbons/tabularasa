@@ -34,7 +34,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Coby Hybrid";
     var folderUrl = "Scene02_CobyHybrid";
     var fileUrl = "Scene02CobyHybrid";
-    var tableTypeModelCode = "UN2L RES.L8-CYSQ";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8-CYSQ";
     $('.power-options-base').hide();
 
 }else if( getUrlParameter('t') == "casters" ){
@@ -42,7 +42,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Casters";
     var folderUrl = "Scene01_Casters";
     var fileUrl = "Scene01Casters";
-    var tableTypeModelCode = "UN2L RES.L8-CS";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8-CS";
 
 }else if( getUrlParameter('t') == "cubby" ){
 
@@ -56,42 +56,42 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Footrails";
     var folderUrl = "Scene04_FootRails";
     var fileUrl = "Scene04FootRails";
-    var tableTypeModelCode = "UN2L RES.L8-FT";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8-FT";
 
 }else if( getUrlParameter('t') == "full-modesty" ){
 
     var tableType = "Full Modesty";
     var folderUrl = "Scene05_FullModesty";
     var fileUrl = "Scene05FullModesty";
-    var tableTypeModelCode = "UN2L RES.L8-FMP";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8-FMP";
 
 }else if( getUrlParameter('t') == "half-modesty" ){
 
     var tableType = "Half Modesty";
     var folderUrl = "Scene06_HalfModesty";
     var fileUrl = "Scene06HalfModesty";
-    var tableTypeModelCode = "UN2L RES.L8-HMP";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8-HMP";
 
 }else if( getUrlParameter('t') == "multi-heights" ){
 
     var tableType = "Multi Heights";
     var folderUrl = "Scene07_MultiHeights";
     var fileUrl = "Scene07MultiHeights";
-    var tableTypeModelCode = "UN2L RES.L8";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8";
 
 }else if( getUrlParameter('t') == "no-hardware" ){
 
     var tableType = "No Hardware";
     var folderUrl = "Scene08_NoHardware";
     var fileUrl = "Scene08NoHardware";
-    var tableTypeModelCode = "UN2L RES.L8";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8";
 
 }else{
 
     var tableType = "Casters";
     var folderUrl = "Scene01_Casters";
     var fileUrl = "Scene01Casters";
-    var tableTypeModelCode = "UN2 RES.L8-CS";
+    var tableTypeModelCode = "UN2 LxWxH RES.L8-CS";
 
     window.location.search += "t=casters"
 
