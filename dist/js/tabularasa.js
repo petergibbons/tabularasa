@@ -91,7 +91,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Casters";
     var folderUrl = "Scene01_Casters";
     var fileUrl = "Scene01Casters";
-    var tableTypeModelCode = "UN2 LxWxH RES.L8-CS";
+    var tableTypeModelCode = "UN2 LxWxH LxWxH LxWxH RES.L8-CS";
 
     window.location.search += "t=casters"
 
@@ -634,6 +634,7 @@ $(function() {
 
                  if( tableType == 'Multi Heights' ) {
                         // multi heights table
+                        // needs 3 table tops
 
                         if( clickedIndex == '0' ){
                             var layer = '5a'; // hardcode layer number
@@ -971,10 +972,7 @@ $(function() {
 
                         }
 
-
-
                 }else{
-
 
                     // is not tableType multi heights
 
