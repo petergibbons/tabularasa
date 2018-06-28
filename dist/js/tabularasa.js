@@ -1535,7 +1535,7 @@ $(window).on('load', function(){
     
     setTimeout(function(){
         $('#loading').hide();
-    }, 6000);
+    }, 4000);
 
     setTimeout(function(){
         $('#loading-image-text').text('Loading Laminate Options...');
@@ -1543,11 +1543,11 @@ $(window).on('load', function(){
 
     setTimeout(function(){
         $('#loading-image-text').text('Loading Bracket Options...');
-    }, 2000);
+    }, 1000);
 
     setTimeout(function(){
         $('#loading-image-text').text('Loading Power Options...');
-    }, 4500);
+    }, 2500);
 
     // preload images for this scene
     
