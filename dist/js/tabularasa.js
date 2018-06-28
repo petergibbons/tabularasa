@@ -1533,7 +1533,7 @@ $(window).on('load', function(){
     // hide loading gif
     
     setTimeout(function(){
-        $('#loading').hide();
+        $('#loading').fadeOut('fast');
     }, 4000);
 
     setTimeout(function(){

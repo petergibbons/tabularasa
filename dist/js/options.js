@@ -1260,9 +1260,9 @@ jQuery('#options-wrapper').append('<div class="btn-group laminate col-xs-12 col-
             <option data-content="<img src=\'dist/img/thumbs/pul.jpg\' class=\'img-responsive\'>" title="PuL">PuL</option>\
             <option data-content="<img src=\'dist/img/thumbs/pwl.jpg\' class=\'img-responsive\'>" title="PwL">PwL</option>\
         </select>\
-        </div>\
-        <div class="btn-group buy-wrapper">\
+    </div>\
+    <div class="btn-group buy-wrapper col-xs-12 col-sm-12 col-md-12 col-lg-12">\
         <button type="button" class="btn btn-quote btn-success pull-right" disabled data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="buy">\
             <span id="quote_text">GET A QUOTE &gt;</span>\
         </button>\
-        </div>');
+    </div>');
