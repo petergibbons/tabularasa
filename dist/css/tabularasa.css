@@ -5,11 +5,13 @@ body {
   background-color: #f8f8f8;
   font-weight: 300 !important;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-button{
-  font-weight: 400 !important;
+button, input{
+  font-weight: 300 !important;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 #wrapper {
@@ -190,6 +192,8 @@ button{
           
           .power-options .dropdown-menu>li>a img, .power-options-base .dropdown-menu>li>a img { width: auto !important; }
           .power-options .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark { margin-top: 18px !important; }
+
+          .power-box-style label { text-transform: uppercase; }
 
           .dropdown-header { background: #f6f6f6; font-size: 12px; font-weight: 400; padding-top: 10px; padding-bottom: 10px; margin-top: 10px; margin-bottom: 10px; }
 
