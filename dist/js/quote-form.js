@@ -51,9 +51,9 @@ jQuery('#quote-form-wrapper').append('<form id="quote" method="get" action="">\
          <div class="row">\
             <div id="table-dimensions" class="col-lg-6">\
                 <h3>Table Dimensions</h3>\
-                    <div>Table Width: <select name="Table_Width" id="table-width" class="form-control"></select></div>\
-                    <div>Table Length: <select name="Table_Length" id="table-length" class="form-control"></select></div>\
-                    <div>Table Height: <select name="Table_Height" id="table-height" class="form-control"></select></div>\
+                    <div><h3>Table Width:</h3> <select name="Table_Width" id="table-width" class="form-control"></select></div>\
+                    <div><h3>Table Length:</h3> <select name="Table_Length" id="table-length" class="form-control"></select></div>\
+                    <div><h3>Table Height:</h3> <select name="Table_Height" id="table-height" class="form-control"></select></div>\
             </div>\
             <div id="table-quantity" class="col-lg-6">\
                 <h3>Table Quantity:</h3>\

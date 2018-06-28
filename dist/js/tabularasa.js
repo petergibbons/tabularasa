@@ -420,17 +420,34 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
 $(function() {
 
     // add no-gutter class if smaller than 768px
-    $(window).resize(function() {
+    // sure up other elements tooo :)
+    var doResize;
+    function resizedw(){
         if ($(window).width() < 768) {
-            alert('Less than 768');
+            //alert('Less than 768');
+            $('.prod-wrapper').addClass('no-gutters-no-padding');
+            $('#model-code').css({'padding-left':'15px'});
         }else {
-            alert('More than 768');
+            //alert('More than 768');
+            $('.prod-wrapper').removeClass('no-gutters-no-padding');
+            $('#model-code').css({'padding-left':'0px'});
         }
-    });
+    }
+    window.onresize = function() {
+        clearTimeout(doResize);
+        doResize = setTimeout(function() {
+            resizedw();
+        }, 100);
+    };
 
     if( tableType == "Multi Heights" ){
 
-        // add extra ECA layers
+        // add extra ECA layers g-r
+        // for (i = 0; i < 12; i++) {
+        //     //li.innerHTML = "letter " + (i+10).toString(36) + " ";
+        //     $("#prod").append('<img id="prod-image-product_option5' + (i+10).toString(36) + ' style="z-index:1;" class="img-responsive product-option product-option-power">');
+        // }
+
         $("#prod").append('<img id="prod-image-product_option5g" style="z-index:1;" class="img-responsive product-option product-option-power">');
         $("#prod").append('<img id="prod-image-product_option5h" style="z-index:1;" class="img-responsive product-option product-option-power">');
         $("#prod").append('<img id="prod-image-product_option5i" style="z-index:1;" class="img-responsive product-option product-option-power">');
@@ -522,7 +539,7 @@ $(function() {
     $(".table-chooser-menu").append('<li><a href="?t=half-modesty">Half Modesty</a></li>');
     $(".table-chooser-menu").append('<li><a href="?t=multi-heights">Multi Heights</a></li>');
     $(".table-chooser-menu").append('<li><a href="?t=no-hardware">No Hardware</a></li>');
-    $("#table-chooser").css('text-transform','none');
+    //$("#table-chooser").css('text-transform','none');
 
     // update model code v2
     $(".model-code-1").html( "[" + tableTypeModelCode + "]");

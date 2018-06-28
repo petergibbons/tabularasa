@@ -121,6 +121,7 @@ button, input{
   .navbar-top-links .dropdown-alerts {
     margin-left: auto;
   }
+
 }
 
 
@@ -159,6 +160,8 @@ button, input{
           .no-gutters { margin-right: 0; margin-left: 0; }
           .no-gutters > [class^="col-"],
           .no-gutters > [class*=" col-"] { padding-right: 0; padding-left: 0; }
+
+          .no-gutters-no-padding { margin-right: 0; margin-left: 0; padding-right: 0; padding-left: 0; }
 
           .prod-wrapper { /*max-width: 960px;*/ }
 
@@ -210,13 +213,13 @@ button, input{
           #submit-quote-wrapper { margin-top: 20px; }
           .btn-quote { background-color: #7DBE4C !important; }
 
-          #edit-config { margin-top: 10px; background: none; color: #333; border: none; }
+          #edit-config { margin-top: 10px; background: none; color: #333; border: none; padding-left:0px; }
 
           .btn-group>.dropdown-toggle { -moz-border-radius: 10px !important; -webkit-border-radius: 10px !important; border-radius: 10px !important; -khtml-border-radius: 10px !important; }
 
           label.error { color: #cc0000; font-weight: 400; }
 
-          #model-code { font-style: italic; margin-top: 10px; color: #666; text-transform: uppercase; }
+          #model-code { font-style: italic; margin-top: 10px; color: #666; text-transform: uppercase; font-size:12px; }
 
           #outlet-type-image { padding-top: 25px; }
 
@@ -249,11 +252,12 @@ button, input{
             color: #555;
             font-weight: 300;
             letter-spacing: 2px;
+            margin-top: 10px;
           }
 
           .table-name-text, #order-details h2 {
             text-transform: uppercase;
-            color: #555;
+            color: #7DBE4C;
             font-weight: 300;
             letter-spacing: 1px;
           }
