@@ -1492,15 +1492,14 @@ $(function() {
 
         //$(':button').removeClass('disabled');
 
-        function printObject(o) {
-            var out = '';
-            for (var p in o) {
-                out += '\n' + ':: ' + p + '(' + typeof(o[p]) + ') ::' + '\n' + o[p] + '\n';
-            }
-            //console.log(out);
-        }
+        // function printObject(o) {
+        //     var out = '';
+        //     for (var p in o) {
+        //         out += '\n' + ':: ' + p + '(' + typeof(o[p]) + ') ::' + '\n' + o[p] + '\n';
+        //     }
+        //     //console.log(out);
+        // }
     
-
     // * * * * * * * * * *
     // traverse $data and output .options
     // aim to list out all option dropdowns
