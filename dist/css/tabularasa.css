@@ -261,3 +261,7 @@ button, input{
             font-weight: 300;
             letter-spacing: 1px;
           }
+
+          #prod-image-product_option_bg { z-index:0; }
+          #prod-image-product_option1, #prod-image-product_option2, #prod-image-product_option3, #prod-image-product_option4 { z-index:1;}
+
