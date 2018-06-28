@@ -582,7 +582,6 @@ $(function() {
         // update model info
         //$(".model-code-" + layer).html( "[" + data[value].model_code + "]");
         
-        
 //        $("#model-code").fadeIn();
 
         // if first run && type is laminate
@@ -656,7 +655,6 @@ $(function() {
             // all other tables
             $('#top-outlet-type').on('changed.bs.select', function (e,clickedIndex,newValue,oldValue) {
                 //alert("clicked: " + clickedIndex + " was: " + oldValue + " isnow: " + newValue);
-
 
                  if( tableType == 'Multi Heights' ) {
                         // multi heights table
@@ -769,7 +767,6 @@ $(function() {
                             }
                                 // update model info
                                 var item_type = 'Power Top';
-
                          
                         // 36
                          }else if( clickedIndex == '6' ){
@@ -790,7 +787,6 @@ $(function() {
                             // update model info
                             var item_type = 'Power Top';
        
-
                         } else if ( clickedIndex == '7' ){
 
                             var layer = '5h'; // hardcode layer number
@@ -825,8 +821,6 @@ $(function() {
                                 // update model info
                                 var item_type = 'Power Top';
 
-
-
                         } else if( clickedIndex == '9' ){
                             var layer = '5j'; // hardcode layer number
                             // show top left
@@ -845,7 +839,6 @@ $(function() {
                             // update model info
                             var item_type = 'Power Top';
        
-
                         } else if ( clickedIndex == '10' ){
 
                             var layer = '5k'; // hardcode layer number
@@ -880,14 +873,9 @@ $(function() {
                                 // update model info
                                 var item_type = 'Power Top';
 
-                        
-                        
-
-
-
 
                          
-                        // 36
+                        // 36"
                          }else if( clickedIndex == '12' ){
                             var layer = '5m'; // hardcode layer number
                             // show top left
@@ -1553,7 +1541,7 @@ $(function() {
 $(window).on('load', function(){
 
     // hide loading gif
-    
+     $('#loading-image-text').text('Loading...');
     setTimeout(function(){
         $('#loading-wrapper').fadeOut('fast');
     }, 4000);
