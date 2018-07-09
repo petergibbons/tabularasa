@@ -507,7 +507,7 @@ $(function() {
         // add cubby option to side
         $("#base-outlet-type").append('<option data-content="<img src=\'dist/img/thumbs/ECA-cubby.jpg\' class=\'img-responsive\'>" title="CUBBY">CUBBY</option>');
         //add model code layer
-         $('<span class="model-code-6cubby"></span>').insertAfter( ".model-code-6c" );
+        $('<span class="model-code-6cubby"></span>').insertAfter( ".model-code-6c" );
 
 
     }// cubby
@@ -1439,8 +1439,8 @@ $(function() {
                 var adminEmail = "tracy.spainhour@trinityanimation.com";
                 var clientEmail = $('[name="Email"]').val()
                 var clientName = $('[name="Name"]').val();
-                var clientEmailText = "Thanks for your interest in Hi5.  All quotes are emailed within 24-48 hours.  To contact customer service, please call (816) 774-4050.<br>";
-                var adminEmailText = "The following was submitted for quote from the Hi5 Table Configurator.<br>";
+                var clientEmailText = "Thanks for your interest in Hi5.  All requests are responded to within 24-48 hours.  To contact customer service, please call (816) 774-4050 or email Sales@Hi5Furniture.com.<br>";
+                var adminEmailText = "The following was submitted for quote from the Hi5 Table Visualizer.<br>";
 
                 $('#quote input:not(:radio), #quote textarea, #quote input[name=Power_Box]:checked,#quote select').each(function(index) {
                     //console.log($(this).attr('name') + " = " + $(this).val();

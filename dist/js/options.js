@@ -194,7 +194,7 @@ jQuery('#options-wrapper').append('\
             </li>\
             <li>\
                 <a href="#" title="" data-uid="42" data-layer="1">\
-                <img src="dist/img/thumbs/Thumbnail_Laminate_Antique_Cognac_Pine_Y0306K.jpg"> Antique Congnac Pine</a>\
+                <img src="dist/img/thumbs/Thumbnail_Laminate_Antique_Cognac_Pine_Y0306K.jpg"> Antique Cognac Pine</a>\
             </li>\
             <li>\
                 <a href="#" title="" data-uid="43" data-layer="1">\
