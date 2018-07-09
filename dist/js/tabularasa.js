@@ -49,7 +49,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Cubby";
     var folderUrl = "Scene03_Cubby";
     var fileUrl = "Scene03Cubby";
-    var tableTypeModelCode = "";
+    var tableTypeModelCode = "UN2L size RES.L8 – CB3S,D";
 
 }else if( getUrlParameter('t') == "foot-rails" ){
 
