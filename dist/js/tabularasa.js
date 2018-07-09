@@ -602,7 +602,7 @@ $(function() {
                 $('#selected_2 .text').text(data[value].label);
 
                 // update model info
-                $("#option_2").html( item_type + ": " + data[value].label);
+                $("#option_2").html( item_type + ": " + data[value].label );
                 $("#finish_name_2").val( $(this).text() ); // hidden form fields
 
                 // update model info on pdf

@@ -1107,7 +1107,7 @@ jQuery('#options-wrapper').append('\
             </li>\
             <li>\
                 <a href="#" title="" data-uid="3" data-layer="4">\
-                <img src="dist/img/thumbs/Thumbnail_Bracket_Chrome_Powder_Coat[CHP].jpg"> Chrome Power Coat</a>\
+                <img src="dist/img/thumbs/Thumbnail_Bracket_Chrome_Powder_Coat[CHP].jpg"> Chrome Powder Coat</a>\
             </li>\
            <li>\
                 <a href="#" title="" data-uid="4" data-layer="4">\
