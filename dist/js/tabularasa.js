@@ -1,17 +1,8 @@
-/*
-* @package Hi5 Configurator
-*/
-
-
-// preload all images
-//$("#page-wrapper2").Prefetch();
-    
 
 // * * * * * * * * * *
 // get url parameters
 // set data object 
 // * * * * * * * * * *
-
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -49,7 +40,7 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var tableType = "Cubby";
     var folderUrl = "Scene03_Cubby";
     var fileUrl = "Scene03Cubby";
-    var tableTypeModelCode = "UN2L size RES.L8 – CB3S,D";
+    var tableTypeModelCode = "UN2L LxWxH RES.L8 – CB3S,D";
 
 }else if( getUrlParameter('t') == "foot-rails" ){
 
@@ -79,9 +70,9 @@ if( getUrlParameter('t') == "coby-hybrid") {
     var fileUrl = "Scene07MultiHeights";
     var tableTypeModelCode = "UN2L LxWxH LxWxH LxWxH RES.L8";
 
-}else if( getUrlParameter('t') == "no-hardware" ){
+}else if( getUrlParameter('t') == "basic" ){
 
-    var tableType = "No Hardware";
+    var tableType = "Basic";
     var folderUrl = "Scene08_NoHardware";
     var fileUrl = "Scene08NoHardware";
     var tableTypeModelCode = "UN2L LxWxH RES.L8";
@@ -104,8 +95,7 @@ $('#prod-image-product_option2').attr('src', "dist/img/" + folderUrl + "/DEFAULT
 $('#prod-image-product_option3').attr('src', "dist/img/" + folderUrl + "/DEFAULT/" + folderUrl + "_Accent_Grey_01.png");
 $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT/" + folderUrl + "_Bracket_Grey_01.png");
 
-
- var data = {
+var data = {
     "1" : { img: "dist/img/" + folderUrl + "/Bracket/" + fileUrl + "_Bracket_Black[BK].png", label: "Black", item_type: "Bracket", model_code: "BK" },
     "2" : { img: "dist/img/" + folderUrl + "/Bracket/" + fileUrl + "_Bracket_Brown[BR].png", label: "Brown", item_type: "Bracket", model_code: "BR" },
     "3" : { img: "dist/img/" + folderUrl + "/Bracket/" + fileUrl + "_Bracket_Chrome_Powder_Coat[CHP].png", label: "Chrome Powder Coat", item_type: "Bracket", model_code: "CHP" },
@@ -407,14 +397,14 @@ $('#prod-image-product_option4').attr('src', "dist/img/" + folderUrl + "/DEFAULT
     "299" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Zanzibar_7957K-78.png", label: "Zanzibar", item_type: "Accent Laminate", model_code: "7957K-78" },
     "300" : { img: "dist/img/" + folderUrl + "/Accent/" + fileUrl + "_Accent_Zebrawood_7980K-18.png", label: "Zebrawood", item_type: "Accent Laminate", model_code: "7980K-18" }
 };
-    
- 
-    var tableWidths = [ "18", "24", "30", "36", "42", "48", "60" ];
-    var tableLengths = [ "42", "48", "60", "72", "84", "96", "120", "144", "168" ];
-    var tableHeights = [ "18", "24", "29", "36", "42" ];
-    var numberOfOutlets = 0;
-    var firstRun = true;
-    var images = new Array();
+
+
+var tableWidths = [ "18", "24", "30", "36", "42", "48", "60" ];
+var tableLengths = [ "42", "48", "60", "72", "84", "96", "120", "144", "168" ];
+var tableHeights = [ "18", "24", "29", "36", "42" ];
+var numberOfOutlets = 0;
+var firstRun = true;
+var images = new Array();
 
 // document ready
 $(function() {
@@ -508,8 +498,6 @@ $(function() {
         $("#base-outlet-type").append('<option data-content="<img src=\'dist/img/thumbs/ECA-cubby.jpg\' class=\'img-responsive\'>" title="CUBBY">CUBBY</option>');
         //add model code layer
         $('<span class="model-code-6cubby"></span>').insertAfter( ".model-code-6c" );
-
-
     }// cubby
 
     // * * * * * * * * * *
@@ -530,15 +518,14 @@ $(function() {
     // * * * * * * * * * *
     // add table types to table chooser dropdown
     // * * * * * * * * * *
-
-    $(".table-chooser-menu").append('<li><a href="?t=casters">Casters</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=coby-hybrid">Coby Hybrid</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=cubby">Cubby</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=foot-rails">Foot Rails</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=full-modesty">Full Modesty</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=half-modesty">Half Modesty</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=multi-heights">Multi Heights</a></li>');
-    $(".table-chooser-menu").append('<li><a href="?t=no-hardware">No Hardware</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=basic">Union 2 Basic</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=casters">Union 2 Casters</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=coby-hybrid">Union 2 Coby Hybrid</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=cubby">Union 2 Cubby</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=foot-rails">Union 2 Foot Rails</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=full-modesty">Union 2 Full Modesty</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=half-modesty">Union 2 Half Modesty</a></li>');
+    $(".table-chooser-menu").append('<li><a href="?t=multi-heights">Union 2 Multi Heights</a></li>');
     //$("#table-chooser").css('text-transform','none');
 
     // update model code v2
@@ -557,12 +544,6 @@ $(function() {
         var layer = $(this).data("layer");
         var thumb = $(this).find('img').attr('src');
 
-            // enable button text for the next option
-            // offers step by step type experience
-            //      
-            // possibly user for requiring user to have selected a tabletop and hardware before adding an outlet type
-            // $('#selected_' + layer + ', #selected_' + (layer+1)).removeClass('disabled');
-
         // change product image
         $('#prod-image-product_option'+layer).fadeOut(150, function() {
             $('#prod-image-product_option'+layer).attr('src', data[value].img).fadeIn(250);      
@@ -576,13 +557,10 @@ $(function() {
         $("#option_" + layer).html( item_type + ": " + data[value].label);
         $("#finish_name_" + layer).val( $(this).text() ); // hidden form fields
 
-        // update model info on pdf
-        //$("#pdf_option_" + layer).html( item_type + ": " + data[value].label);
-
         // update model info
         //$(".model-code-" + layer).html( "[" + data[value].model_code + "]");
         
-//        $("#model-code").fadeIn();
+        //$("#model-code").fadeIn();
 
         // if first run && type is laminate
         // auto select edge to match 
@@ -1358,7 +1336,6 @@ $(function() {
         });
  
         e.preventDefault();
-
     });
 
     // * * * * * * * * * *
@@ -1387,7 +1364,6 @@ $(function() {
             image.attr('src', 'dist/img/thumbs/Hi5_PowerBoxes_' + newSrc + '.jpg');
             image.fadeIn('fast');
         });
-      
     });
 
 
@@ -1397,8 +1373,8 @@ $(function() {
     // * * * * * * * * * *
     // * * * * * * * * * *
 
-        $("#quote").submit(function(e){
-            e.preventDefault();
+    $("#quote").submit(function(e){
+        e.preventDefault();
         }).validate({
             // Specify validation rules
             rules: {
@@ -1436,7 +1412,8 @@ $(function() {
                 //form.submit();
                 
                 // gather details to email to user and admin
-                var adminEmail = "tracy.spainhour@trinityanimation.com";
+                //var adminEmail = "tracy.spainhour@trinityanimation.com";
+                var adminEmail = "bristond@gmail.com";
                 var clientEmail = $('[name="Email"]').val()
                 var clientName = $('[name="Name"]').val();
                 var clientEmailText = "Thanks for your interest in Hi5.  All requests are responded to within 24-48 hours.  To contact customer service, please call (816) 774-4050 or email Sales@Hi5Furniture.com.<br>";
@@ -1456,7 +1433,7 @@ $(function() {
                     }
                     
                 });
-                    adminEmailText += "Model Code: " + tableTypeModelCode;
+                    adminEmailText += "Union 2 " + tableType + " Model Code: " + tableTypeModelCode;
                     
                     /*
                      * Uses smtp.js and sendInBlue transaction email service
@@ -1510,30 +1487,30 @@ $(function() {
         //     //console.log(out);
         // }
     
-    // * * * * * * * * * *
-    // traverse $data and output .options
-    // aim to list out all option dropdowns
-    // without having to hardcode all options
-    /* maybe v3
-    // * * * * * * * * * *
+                            // * * * * * * * * * *
+                            // traverse $data and output .options
+                            // aim to list out all option dropdowns
+                            // without having to hardcode all options
+                            /* maybe v3
+                            // * * * * * * * * * *
 
-    var result = "";
+                            var result = "";
 
-    function buildProductDropdowns(key,value) { 
-       
-        result = key + " : " +
-            value.label + " [ thumb: " +
-            value.thumb + " ] [ img: " + 
-            value.img + " ]<br>"
-        ;
-        // $("#debug").append( result );
+                            function buildProductDropdowns(key,value) { 
+                               
+                                result = key + " : " +
+                                    value.label + " [ thumb: " +
+                                    value.thumb + " ] [ img: " + 
+                                    value.img + " ]<br>"
+                                ;
+                                // $("#debug").append( result );
 
-    }
+                            }
 
-    Object.entries(data).forEach(
-        ([key, value]) => buildProductDropdowns(key,value)
-    );
- */
+                            Object.entries(data).forEach(
+                                ([key, value]) => buildProductDropdowns(key,value)
+                            );
+                         */
    
 });
 
@@ -1581,6 +1558,4 @@ $(window).on('load', function(){
 
         return preloadImages(key, value);
     });
-
-
 });
