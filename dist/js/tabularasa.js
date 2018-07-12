@@ -160,7 +160,7 @@ var data = {
     "62" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Factory_Antique_Wood_Y0257K.png", label: "Factory Antique Wood", item_type: "Laminate", model_code: "Y0257K" },
     "63" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Flamingo_D497.png", label: "Flamingo", item_type: "Laminate", model_code: "D497" },
     "64" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Green_Slate_8793.png", label: "Green Slate", item_type: "Laminate", model_code: "8793" },
-    "65" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Grenadine_6902.png", label: "Greenadine", item_type: "Laminate", model_code: "6902" },
+    "65" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Grenadine_6902.png", label: "Grenadine", item_type: "Laminate", model_code: "6902" },
     "66" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Grey_Glace_4142-60.png", label: "Grey Glace", item_type: "Laminate", model_code: "4142-60" },
     "67" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_Highline_7970K-18.png", label: "Highline", item_type: "Laminate", model_code: "7970K-18" },
     "68" : { img: "dist/img/" + folderUrl + "/Laminate/" + fileUrl + "_Laminate_HollyBerry_D307.png", label: "Holly Berry", item_type: "Laminate", model_code: "D307" },
@@ -1204,7 +1204,7 @@ $(function() {
         $("#table-height").append('<option value="' + tableHeights[i] + '">' + tableHeights[i] +'"</option>');
     }
 
-    for ( i = 0; i < 18; i++) {
+    for ( i = 0; i < 22; i++) {
         $("#outlet-count").append('<option value="' + i + '">' + i +'</option>');
     }
 
