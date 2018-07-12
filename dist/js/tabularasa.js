@@ -1071,11 +1071,7 @@ $(function() {
                     }
                 } // end if tableType
 
-                // UPDATE SCREEN
-                if( numberOfOutlets > 0 ) {
-                    $('#outlet-count option[value=' + numberOfOutlets + ']').attr('selected','selected'); // set number on customer form
-                    $("#power-boxes, #outlet-type-options").fadeIn(); // fade in outlet options on customer form
-                }
+
                 // change product image
                 $('#prod-image-product_option'+layer).fadeOut(150, function() {
                     $('#prod-image-product_option'+layer).attr('src', imageURL).fadeIn(250);      
@@ -1181,7 +1177,13 @@ $(function() {
                 // $("#model-code").fadeIn();
 
             });
-
+                // UPDATE SCREEN
+                if( numberOfOutlets > 0 ) {
+                        //$('#outlet-count').val($(this).find('option:first').val()); // RESET number on customer form
+                        //$('#outlet-count').find('option:selected').prop("selected", false)
+                    $('#outlet-count option[value=' + numberOfOutlets + ']').attr('selected','selected'); // set number on customer form
+                    $("#power-boxes, #outlet-type-options").fadeIn(); // fade in outlet options on customer form
+                }
 
     // * * * * * * * * * *
     // * * * * * * * * * *
