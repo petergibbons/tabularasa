@@ -454,7 +454,7 @@ $(function() {
         // add extra options to options dropdown
         // *************
 
-        $("#top-outlet-type").html('<option data-content="<img src=\'dist/img/thumbs/pbs-29.jpg\' class=\'img-responsive\'>" title="PbL29">PbL 29</option>\
+        $("#top-outlet-type").html('<option data-content="<img src=\'dist/img/thumbs/pbl-29.jpg\' class=\'img-responsive\'>" title="PbL29">PbL 29</option>\
         <option data-content="<img src=\'dist/img/thumbs/pal-29.jpg\' class=\'img-responsive\'>" title="PaL29">PaL 29</option>\
         <option data-content="<img src=\'dist/img/thumbs/pcl-29.jpg\' class=\'img-responsive\'>" title="PcL29">PcL 29</option>\
         <option data-content="<img src=\'dist/img/thumbs/pdl-29.jpg\' class=\'img-responsive\'>" title="PdL29">PdL 29</option>\
