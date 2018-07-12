@@ -580,21 +580,8 @@ $(function() {
                 $('#selected_2 .text').text(data[value].label);
 
                 // update model info
-                $("#option_2").html( item_type + ": " + data[value].label );
+                $("#option_2").html( "Edge " + item_type + ": " + data[value].label );
                 $("#finish_name_2").val( $(this).text() ); // hidden form fields
-
-                // update model info on pdf
-                //$("#pdf_option_2").html( item_type + ": " + data[value].label);
-
-                // update model info
-                //$(".model-code-2").html( "[" + data[value].model_code + "]");
-                // create global function to accept both power and table options
-                //$("#model-code").fadeIn();
-                
-                // only fire once?
-                //$("#finish_name_2").val() == data[value].label
-                //alert($("#finish_name_2").val() + "::" + data[value].label);
-                //firstRun = false;
             
         }
 
@@ -1177,13 +1164,6 @@ $(function() {
                 // $("#model-code").fadeIn();
 
             });
-                // UPDATE SCREEN
-                if( numberOfOutlets > 0 ) {
-                        //$('#outlet-count').val($(this).find('option:first').val()); // RESET number on customer form
-                        //$('#outlet-count').find('option:selected').prop("selected", false)
-                    $('#outlet-count option[value=' + numberOfOutlets + ']').attr('selected','selected'); // set number on customer form
-                    $("#power-boxes, #outlet-type-options").fadeIn(); // fade in outlet options on customer form
-                }
 
     // * * * * * * * * * *
     // * * * * * * * * * *
@@ -1220,6 +1200,14 @@ $(function() {
             $(".options :button").attr("disabled", true);
             $("#prod-image-product_option_bg").fadeTo("slow", .643);
         });
+
+        // UPDATE SCREEN
+        if( numberOfOutlets > 0 ) {
+                //$('#outlet-count').val($(this).find('option:first').val()); // RESET number on customer form
+                //$('#outlet-count').find('option:selected').prop("selected", false)
+            $('#outlet-count option[value=' + numberOfOutlets + ']').attr('selected','selected'); // set number on customer form
+            $("#power-boxes, #outlet-type-options").fadeIn(); // fade in outlet options on customer form
+        }
         e.preventDefault();
     });
 
