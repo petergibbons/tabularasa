@@ -558,9 +558,9 @@ $(function() {
         $("#finish_name_" + layer).val( $(this).text() ); // hidden form fields
 
         // update model info
-        //$(".model-code-" + layer).html( "[" + data[value].model_code + "]");
+        $("#model-code").html( "[" + tableTypeModelCode + "]");
         
-        //$("#model-code").fadeIn();
+        $("#model-code").fadeIn();
 
         // if first run && type is laminate
         // auto select edge to match 
